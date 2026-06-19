@@ -1,0 +1,537 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const calendlyUrl = "https://calendly.com/designbysanne-info/30min";
+
+const strengths = [
+  {
+    number: "01",
+    title: "Strategisch meedenken",
+    text: "Ik help richting, doelgroep, boodschap en keuzes scherp te krijgen, zodat marketing en communicatie meer samenhang krijgen.",
+  },
+  {
+    number: "02",
+    title: "Praktisch uitvoeren",
+    text: "Van content en campagnes tot website-aanpassingen, nieuwsbrieven, social media en visuele middelen: ideeën worden concreet.",
+  },
+  {
+    number: "03",
+    title: "Rust en structuur",
+    text: "Ik breng overzicht in losse ideeën, acties en communicatiekanalen, zodat duidelijk wordt wat prioriteit heeft.",
+  },
+];
+
+const testimonials = [
+  {
+    quote: "Sanne maakte een vlotte vertaling van mijn ideeën naar een bruikbare flyer. Goed, betaalbaar en vlot!",
+    name: "Wim Flier",
+    company: "Flier Fietsen",
+  },
+  {
+    quote: "Ze vertaalt mijn ideeën naar concrete, klantvriendelijke voorstellen. Dankzij haar is alles soepeler en efficiënter.",
+    name: "Jan Bloem",
+    company: "D.A.T. Movement",
+  },
+  {
+    quote: "Ze is professioneel, komt afspraken na en is breed inzetbaar. Betrouwbaarheid staat bij haar voorop.",
+    name: "Jan Willem Rolfers",
+    company: "SF Training Facilities",
+  },
+];
+---
+
+<BaseLayout
+  title="Over mij | Design by Sanne"
+  description="Maak kennis met Sanne: marketing- en communicatieprofessional die bedrijven helpt met strategie, content, campagnes, websites en visuele uitvoering."
+  canonical="https://designbysanne.nl/over-mij/"
+  ogTitle="Over mij | Design by Sanne"
+  ogDescription="Maak kennis met Sanne, marketing- en communicatieprofessional met oog voor strategie en uitvoering."
+>
+  <main>
+    <section class="about-hero" aria-labelledby="about-title">
+      <div class="about-hero-inner">
+        <div class="about-hero-copy">
+          <p class="about-kicker">Over Sanne</p>
+          <h1 id="about-title">Marketing- en communicatieprofessional met oog voor strategie én uitvoering.</h1>
+          <p>
+            Ik ben Sanne. Ik help bedrijven om meer richting, structuur en zichtbaarheid te brengen
+            in hun marketing en communicatie. Ik denk mee over strategie, boodschap en content,
+            en help daarna ook met de praktische uitvoering.
+          </p>
+          <a class="button button-primary" href={calendlyUrl}>Plan een kennismaking</a>
+        </div>
+        <figure class="about-hero-visual">
+          <img src="/assets/designbysanne/over-mij-sanne.jpg" alt="Sanne van Design by Sanne" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="about-statement" aria-label="Korte samenvatting">
+      <p>
+        Ik combineer creativiteit, overzicht en doorpakken: niet alleen bedenken wat goed zou zijn,
+        maar het ook helder en praktisch realiseren.
+      </p>
+    </section>
+
+    <section class="about-story" aria-labelledby="story-title">
+      <div class="about-story-copy">
+        <p class="about-kicker">Van ontwerp naar bredere marketingpartner</p>
+        <h2 id="story-title">Design by Sanne groeide mee met de vragen van organisaties.</h2>
+        <p>
+          Design by Sanne begon vanuit hands-on ontwerpen en praktische ondersteuning. Inmiddels is mijn rol
+          breder geworden: ik help organisaties met positionering, marketing, communicatie, content,
+          campagnes, websites en visuele middelen die samen één duidelijke lijn vormen.
+        </p>
+      </div>
+      <div class="about-proof" aria-label="Waar ik voor sta">
+        <div>
+          <strong>Richting</strong>
+          <span>heldere keuzes en een verhaal dat klopt</span>
+        </div>
+        <div>
+          <strong>Structuur</strong>
+          <span>overzicht in plannen, content en communicatiekanalen</span>
+        </div>
+        <div>
+          <strong>Zichtbaarheid</strong>
+          <span>middelen die professioneel voelen en praktisch werken</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" aria-labelledby="strengths-title">
+      <div class="section-heading">
+        <p class="about-kicker">Wat je aan mij hebt</p>
+        <h2 id="strengths-title">Meedenken op hoofdlijnen én helpen uitvoeren.</h2>
+        <p>
+          Ik werk graag dicht op de inhoud: eerst scherp krijgen wat nodig is,
+          daarna zorgen dat de juiste middelen ook echt gemaakt worden.
+        </p>
+      </div>
+
+      <div class="strength-grid">
+        {
+          strengths.map((item) => (
+            <article class="strength-card">
+              <span>{item.number}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="personal-section" aria-labelledby="personal-title">
+      <div>
+        <p class="about-kicker">Ook Sanne</p>
+        <h2 id="personal-title">Betrokken, eerlijk en graag praktisch bezig.</h2>
+      </div>
+      <p>
+        Naast mijn werk ben ik graag actief, creatief en betrokken bij de mensen om me heen.
+        Die persoonlijke kant neem ik ook mee in mijn werk: laagdrempelig, eerlijk en met aandacht
+        voor wat bij jou en je organisatie past.
+      </p>
+    </section>
+
+    <section class="testimonial-section" aria-labelledby="testimonials-title">
+      <div class="section-heading">
+        <p class="about-kicker">Samenwerkingen</p>
+        <h2 id="testimonials-title">Waar ik trots op ben.</h2>
+        <p>Een paar reacties van mensen en organisaties waarmee ik heb samengewerkt.</p>
+      </div>
+
+      <div class="testimonial-grid">
+        {
+          testimonials.map((testimonial) => (
+            <article class="testimonial-card">
+              <p>“{testimonial.quote}”</p>
+              <footer>
+                <strong>{testimonial.name}</strong>
+                <span>{testimonial.company}</span>
+              </footer>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="about-cta" id="kennismaken" aria-labelledby="about-contact-title">
+      <div>
+        <p class="about-kicker">Kennismaken</p>
+        <h2 id="about-contact-title">Zullen we samen kijken wat jouw organisatie nodig heeft?</h2>
+        <p>
+          Wil je meer richting, structuur of zichtbaarheid in je marketing en communicatie?
+          Ik denk graag met je mee.
+        </p>
+      </div>
+      <a class="button button-primary" href={calendlyUrl}>Plan een kennismaking</a>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    padding: 190px 24px 82px;
+    background:
+      linear-gradient(90deg, rgba(32, 40, 47, 0.96), rgba(32, 40, 47, 0.76)),
+      radial-gradient(circle at 82% 24%, rgba(220, 163, 38, 0.3), transparent 34%),
+      #20282f;
+    color: #ffffff;
+  }
+
+  .about-hero-inner {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.62fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .about-hero-copy {
+    min-width: 0;
+  }
+
+  .about-kicker {
+    margin: 0 0 14px;
+    color: #dca326;
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .about-hero h1 {
+    margin-bottom: 24px;
+    font-size: 62px;
+    line-height: 1;
+    font-weight: 900;
+    overflow-wrap: anywhere;
+  }
+
+  .about-hero p:not(.about-kicker) {
+    margin-bottom: 34px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 22px;
+    line-height: 1.55;
+  }
+
+  .about-hero-visual {
+    position: relative;
+    min-width: 0;
+    margin: 0;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+  }
+
+  .about-hero-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(32, 40, 47, 0.02), rgba(32, 40, 47, 0.18));
+    pointer-events: none;
+  }
+
+  .about-hero-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 34%;
+  }
+
+  .about-statement {
+    background: #627727;
+    color: #ffffff;
+  }
+
+  .about-statement p {
+    width: min(1060px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 34px 0;
+    font-size: 26px;
+    line-height: 1.42;
+    font-weight: 800;
+  }
+
+  .about-story {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 94px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+    gap: 44px;
+    align-items: center;
+  }
+
+  .about-story h2,
+  .section-heading h2,
+  .personal-section h2,
+  .about-cta h2 {
+    margin-bottom: 18px;
+    color: #1f2a2f;
+    font-size: 46px;
+    line-height: 1.08;
+    font-weight: 900;
+  }
+
+  .about-story p:not(.about-kicker),
+  .section-heading p:not(.about-kicker),
+  .personal-section p,
+  .about-cta p:not(.about-kicker) {
+    color: #586167;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .about-proof {
+    display: grid;
+    gap: 1px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(32, 40, 47, 0.14);
+    box-shadow: 0 18px 40px rgba(32, 40, 47, 0.08);
+  }
+
+  .about-proof div {
+    display: grid;
+    gap: 8px;
+    min-height: 126px;
+    padding: 24px;
+    background: #ffffff;
+  }
+
+  .about-proof strong {
+    color: #dca326;
+    font-size: 24px;
+  }
+
+  .about-proof span {
+    color: #586167;
+    line-height: 1.55;
+    font-weight: 800;
+  }
+
+  .about-section,
+  .testimonial-section {
+    padding: 94px 24px;
+    background: #f5f4ef;
+  }
+
+  .section-heading {
+    width: min(860px, 100%);
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .strength-grid,
+  .testimonial-grid {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .strength-card,
+  .testimonial-card {
+    padding: 28px;
+    border: 1px solid rgba(32, 40, 47, 0.12);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(32, 40, 47, 0.08);
+  }
+
+  .strength-card {
+    min-height: 300px;
+  }
+
+  .strength-card span {
+    display: block;
+    margin-bottom: 54px;
+    color: #9a4d42;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .strength-card h3 {
+    margin-bottom: 14px;
+    color: #627727;
+    font-size: 25px;
+    line-height: 1.18;
+  }
+
+  .strength-card p,
+  .testimonial-card p {
+    margin-bottom: 0;
+    color: #586167;
+    line-height: 1.62;
+  }
+
+  .personal-section {
+    padding: 86px 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    gap: 44px;
+    align-items: center;
+    background: #20282f;
+    color: #ffffff;
+  }
+
+  .personal-section > * {
+    width: min(100%, 1120px);
+  }
+
+  .personal-section h2,
+  .personal-section p {
+    color: #ffffff;
+  }
+
+  .personal-section p {
+    margin-bottom: 0;
+  }
+
+  .testimonial-card {
+    display: grid;
+    align-content: space-between;
+    min-height: 274px;
+  }
+
+  .testimonial-card p {
+    font-size: 18px;
+  }
+
+  .testimonial-card footer {
+    display: grid;
+    gap: 4px;
+    margin-top: 28px;
+  }
+
+  .testimonial-card strong {
+    color: #20282f;
+  }
+
+  .testimonial-card span {
+    color: #627727;
+    font-weight: 900;
+  }
+
+  .about-cta {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 86px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .about-cta p:not(.about-kicker) {
+    max-width: 720px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 980px) {
+    .about-hero-inner,
+    .about-story,
+    .strength-grid,
+    .testimonial-grid,
+    .personal-section,
+    .about-cta {
+      grid-template-columns: 1fr;
+    }
+
+    .about-hero-inner {
+      min-width: 0;
+    }
+
+    .about-hero-visual {
+      max-width: 460px;
+    }
+
+    .about-hero h1 {
+      max-width: 760px;
+      font-size: 52px;
+    }
+
+    .about-hero p:not(.about-kicker),
+    .about-statement p {
+      font-size: 20px;
+    }
+
+    .about-story h2,
+    .section-heading h2,
+    .personal-section h2,
+    .about-cta h2 {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .about-hero {
+      min-height: 82vh;
+      padding: 164px 18px 58px;
+    }
+
+    .about-hero-inner {
+      gap: 34px;
+      width: 100%;
+    }
+
+    .about-hero h1 {
+      font-size: 41px;
+      line-height: 1.04;
+    }
+
+    .about-hero p:not(.about-kicker) {
+      font-size: 18px;
+    }
+
+    .about-hero-visual {
+      width: 100%;
+      max-width: none;
+      aspect-ratio: 4 / 4.8;
+    }
+
+    .about-statement p,
+    .about-story,
+    .about-cta {
+      width: min(100% - 36px, 1120px);
+    }
+
+    .about-section,
+    .testimonial-section {
+      padding: 68px 18px;
+    }
+
+    .about-story,
+    .personal-section {
+      padding-top: 68px;
+      padding-bottom: 68px;
+    }
+
+    .about-story h2,
+    .section-heading h2,
+    .personal-section h2,
+    .about-cta h2 {
+      font-size: 31px;
+      line-height: 1.14;
+    }
+
+    .strength-card,
+    .testimonial-card {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    .strength-card span {
+      margin-bottom: 34px;
+    }
+  }
+</style>
