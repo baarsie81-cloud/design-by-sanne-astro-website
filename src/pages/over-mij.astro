@@ -52,7 +52,7 @@ const testimonials = [
       <div class="about-hero-inner">
         <div class="about-hero-copy">
           <p class="about-kicker">Over Sanne</p>
-          <h1 id="about-title">Marketing- en communicatieprofessional met oog voor strategie én uitvoering.</h1>
+          <h1 id="about-title">Marketing- en <span class="nowrap-word">communicatieprofessional</span> met oog voor strategie én uitvoering.</h1>
           <p>
             Ik ben Sanne. Ik help bedrijven om meer richting, structuur en zichtbaarheid te brengen
             in hun marketing en communicatie. Ik denk mee over strategie, boodschap en content,
@@ -187,8 +187,8 @@ const testimonials = [
     width: min(1120px, 100%);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.62fr);
-    gap: 56px;
+    grid-template-columns: minmax(0, 1.28fr) minmax(240px, 0.52fr);
+    gap: 48px;
     align-items: center;
   }
 
@@ -206,10 +206,16 @@ const testimonials = [
 
   .about-hero h1 {
     margin-bottom: 24px;
-    font-size: 62px;
+    font-size: 58px;
     line-height: 1;
     font-weight: 900;
-    overflow-wrap: anywhere;
+    hyphens: none;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .nowrap-word {
+    white-space: nowrap;
   }
 
   .about-hero p:not(.about-kicker) {
@@ -452,12 +458,12 @@ const testimonials = [
     }
 
     .about-hero-visual {
-      max-width: 460px;
+      max-width: 390px;
     }
 
     .about-hero h1 {
       max-width: 760px;
-      font-size: 52px;
+      font-size: 46px;
     }
 
     .about-hero p:not(.about-kicker),
@@ -485,8 +491,8 @@ const testimonials = [
     }
 
     .about-hero h1 {
-      font-size: 41px;
-      line-height: 1.04;
+      font-size: clamp(25px, 6.55vw, 34px);
+      line-height: 1.08;
     }
 
     .about-hero p:not(.about-kicker) {
@@ -495,7 +501,7 @@ const testimonials = [
 
     .about-hero-visual {
       width: 100%;
-      max-width: none;
+      max-width: 320px;
       aspect-ratio: 4 / 4.8;
     }
 
