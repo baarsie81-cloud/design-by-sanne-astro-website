@@ -1,0 +1,410 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const calendlyUrl = "https://calendly.com/designbysanne-info/30min";
+
+const services = [
+  {
+    number: "01",
+    title: "Strategie & positionering",
+    text: "We brengen helder in kaart waar je voor staat, wie je wilt bereiken en welke boodschap daarbij hoort.",
+    points: ["Richting en keuzes scherp krijgen", "Doelgroep en kernboodschap bepalen", "Communicatie-aanpak en prioriteiten"],
+  },
+  {
+    number: "02",
+    title: "Marketing & campagnes",
+    text: "Ik vertaal je doelen naar zichtbare marketingacties die passen bij je organisatie en doelgroep.",
+    points: ["Contentplanning en campagnes", "E-mailmarketing en nieuwsbrieven", "Social media en online zichtbaarheid"],
+  },
+  {
+    number: "03",
+    title: "Communicatie & content",
+    text: "Heldere teksten en content die beter vertellen waar je voor staat en waarom dat relevant is.",
+    points: ["Websitecommunicatie en webteksten", "Nieuwsbrieven en klantcommunicatie", "Blogs, berichten en contentformats"],
+  },
+  {
+    number: "04",
+    title: "Visuele communicatie & ontwerp",
+    text: "Communicatie wordt niet alleen duidelijk, maar ook visueel sterk en passend bij je merk.",
+    points: ["Grafisch ontwerp en drukwerk", "Social visuals en presentaties", "Praktische merkuitingen"],
+  },
+  {
+    number: "05",
+    title: "Website & online beheer",
+    text: "Je website blijft actueel, duidelijk en ondersteunend aan je marketing en communicatie.",
+    points: ["Pagina's en content bijwerken", "Websitecommunicatie verbeteren", "Eenvoudige technische updates"],
+  },
+];
+
+const steps = [
+  {
+    label: "Stap 1",
+    title: "Scherp krijgen",
+    text: "We bepalen doelen, doelgroep, boodschap en de belangrijkste keuzes.",
+  },
+  {
+    label: "Stap 2",
+    title: "Maken & uitvoeren",
+    text: "Ik werk content, campagnes, visuals, nieuwsbrieven of website-aanpassingen uit.",
+  },
+  {
+    label: "Stap 3",
+    title: "Bijsturen",
+    text: "We kijken wat werkt, wat beter kan en welke volgende stap logisch is.",
+  },
+];
+---
+
+<BaseLayout
+  title="Diensten | Design by Sanne"
+  description="Bekijk hoe Design by Sanne helpt met strategie, marketing en communicatie: van positionering en content tot campagnes, websites en visuele uitvoering."
+  canonical="https://designbysanne.nl/diensten/"
+  ogTitle="Diensten | Design by Sanne"
+  ogDescription="Strategie, marketing en communicatie met een duidelijke lijn en praktische uitvoering."
+>
+  <main>
+    <section class="services-hero" aria-labelledby="services-title">
+      <div class="services-hero-inner">
+        <p class="services-kicker">Diensten</p>
+        <h1 id="services-title">Strategie, marketing en communicatie met een duidelijke lijn.</h1>
+        <p>
+          Ik denk met je mee op strategisch niveau en help daarna ook met de praktische uitvoering:
+          van positionering en contentaanpak tot campagnes, websites, social media en visuele communicatie.
+        </p>
+        <a class="button button-primary" href={calendlyUrl}>Plan een kennismaking</a>
+      </div>
+    </section>
+
+    <section class="services-intro" aria-label="Voor wie">
+      <p>
+        Voor bedrijven die meer richting, structuur en herkenbaarheid willen in hun marketing en communicatie,
+        zonder dat het ingewikkeld of afstandelijk wordt.
+      </p>
+    </section>
+
+    <section class="services-section" aria-labelledby="services-overview">
+      <div class="section-heading">
+        <p class="services-kicker">Waar ik je mee help</p>
+        <h2 id="services-overview">Van keuzes maken tot zichtbaar worden.</h2>
+        <p>
+          De kracht zit in de combinatie: eerst scherp krijgen wat klopt, daarna zorgen dat het ook
+          praktisch wordt uitgevoerd.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        {
+          services.map((service) => (
+            <article class="service-card">
+              <span>{service.number}</span>
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+              <ul>
+                {service.points.map((point) => (
+                  <li>{point}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="process-section" aria-labelledby="process-title">
+      <div class="section-heading section-heading-dark">
+        <p class="services-kicker">Werkwijze</p>
+        <h2 id="process-title">Rust in het proces, scherpte in de keuzes.</h2>
+      </div>
+      <div class="process-grid">
+        {
+          steps.map((step) => (
+            <article>
+              <span>{step.label}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="services-cta" id="kennismaken" aria-labelledby="services-contact-title">
+      <div>
+        <p class="services-kicker">Kennismaken</p>
+        <h2 id="services-contact-title">Wil je meer richting, structuur of zichtbaarheid?</h2>
+        <p>
+          Laten we samen kijken wat jouw organisatie nodig heeft en welke stap nu het meeste oplevert.
+        </p>
+      </div>
+      <a class="button button-primary" href={calendlyUrl}>Plan een kennismaking</a>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .services-hero {
+    min-height: 74vh;
+    display: flex;
+    align-items: end;
+    padding: 190px 24px 82px;
+    background:
+      linear-gradient(90deg, rgba(32, 40, 47, 0.96), rgba(32, 40, 47, 0.76)),
+      radial-gradient(circle at 82% 24%, rgba(220, 163, 38, 0.3), transparent 34%),
+      #20282f;
+    color: #ffffff;
+  }
+
+  .services-hero-inner {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+  }
+
+  .services-kicker {
+    margin: 0 0 14px;
+    color: #dca326;
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .services-hero h1 {
+    max-width: 860px;
+    margin-bottom: 24px;
+    font-size: 68px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .services-hero p:not(.services-kicker) {
+    max-width: 760px;
+    margin-bottom: 34px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 22px;
+    line-height: 1.55;
+  }
+
+  .services-intro {
+    background: #627727;
+    color: #ffffff;
+  }
+
+  .services-intro p {
+    width: min(1060px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 34px 0;
+    font-size: 26px;
+    line-height: 1.42;
+    font-weight: 800;
+  }
+
+  .services-section {
+    padding: 94px 24px;
+    background: #f5f4ef;
+  }
+
+  .section-heading {
+    width: min(860px, 100%);
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .section-heading h2,
+  .services-cta h2 {
+    margin-bottom: 18px;
+    color: #1f2a2f;
+    font-size: 46px;
+    line-height: 1.08;
+    font-weight: 900;
+  }
+
+  .section-heading p:not(.services-kicker),
+  .services-cta p:not(.services-kicker) {
+    color: #586167;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .services-grid {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .service-card {
+    min-height: 330px;
+    padding: 28px;
+    border: 1px solid rgba(32, 40, 47, 0.12);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(32, 40, 47, 0.08);
+  }
+
+  .service-card:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+
+  .service-card span {
+    display: block;
+    margin-bottom: 46px;
+    color: #9a4d42;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .service-card h3 {
+    margin-bottom: 14px;
+    color: #627727;
+    font-size: 27px;
+    line-height: 1.18;
+  }
+
+  .service-card p,
+  .service-card li {
+    color: #586167;
+    line-height: 1.62;
+  }
+
+  .service-card p {
+    margin-bottom: 18px;
+  }
+
+  .service-card ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .service-card li + li {
+    margin-top: 7px;
+  }
+
+  .process-section {
+    padding: 94px 24px;
+    background: #20282f;
+    color: #ffffff;
+  }
+
+  .section-heading-dark h2 {
+    color: #ffffff;
+  }
+
+  .process-grid {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .process-grid article {
+    min-height: 238px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .process-grid span {
+    display: block;
+    margin-bottom: 48px;
+    color: #dca326;
+    font-weight: 900;
+  }
+
+  .process-grid h3 {
+    margin-bottom: 12px;
+    font-size: 25px;
+  }
+
+  .process-grid p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.62;
+  }
+
+  .services-cta {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 86px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .services-cta p:not(.services-kicker) {
+    max-width: 720px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 980px) {
+    .services-hero h1 {
+      max-width: 680px;
+      font-size: 54px;
+    }
+
+    .services-hero p:not(.services-kicker),
+    .services-intro p {
+      font-size: 20px;
+    }
+
+    .section-heading h2,
+    .services-cta h2 {
+      font-size: 36px;
+    }
+
+    .services-grid,
+    .process-grid,
+    .services-cta {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card:nth-child(5) {
+      grid-column: auto;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .services-hero {
+      min-height: 82vh;
+      padding: 164px 18px 58px;
+    }
+
+    .services-hero h1 {
+      font-size: 42px;
+      line-height: 1.04;
+    }
+
+    .services-hero p:not(.services-kicker) {
+      font-size: 18px;
+    }
+
+    .services-intro p,
+    .services-cta {
+      width: min(100% - 36px, 1120px);
+    }
+
+    .services-section,
+    .process-section {
+      padding: 68px 18px;
+    }
+
+    .section-heading h2,
+    .services-cta h2 {
+      font-size: 31px;
+      line-height: 1.14;
+    }
+
+    .service-card,
+    .process-grid article {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    .service-card span,
+    .process-grid span {
+      margin-bottom: 34px;
+    }
+  }
+</style>
