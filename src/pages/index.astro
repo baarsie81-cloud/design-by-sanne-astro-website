@@ -204,8 +204,40 @@ const serviceTags = [
     </main>
 
     <footer class="footer">
-      <img src="/assets/designbysanne/logo-dbs-blue.png" alt="Design by Sanne - strategie marketing communicatie" />
-      <p>strategie &bull; marketing &bull; communicatie</p>
+      <div class="footer-brand">
+        <img src="/assets/designbysanne/logo-dbs-blue.png" alt="Design by Sanne - strategie marketing communicatie" />
+        <p>strategie &bull; marketing &bull; communicatie</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer menu">
+        <a href="/">Home</a>
+        <a href="/diensten/">Diensten</a>
+        <a href="/over-mij/">Over mij</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+
+      <div class="footer-socials" aria-label="Sociale links">
+        <a href="https://www.instagram.com/designbysanne/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1"></circle>
+          </svg>
+        </a>
+        <a href="mailto:info@designbysanne.nl" aria-label="E-mail">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 6h16v12H4z"></path>
+            <path d="m4 7 8 6 8-6"></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sannekamps/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M5 9h4v10H5z"></path>
+            <path d="M5 5.5h4v.1H5z"></path>
+            <path d="M13 9h3.7v1.5c.6-1 1.6-1.8 3.1-1.8 2.3 0 4.2 1.5 4.2 4.8V19h-4v-5c0-1.4-.5-2.2-1.7-2.2-1.1 0-1.7.7-1.7 2.2v5H13z"></path>
+          </svg>
+        </a>
+      </div>
     </footer>
   </body>
 </html>
@@ -650,16 +682,20 @@ const serviceTags = [
   }
 
   .footer {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) auto minmax(180px, 1fr);
     align-items: center;
-    justify-content: space-between;
-    gap: 22px;
-    padding: 32px 42px;
+    gap: 32px;
+    padding: 34px 42px;
     border-top: 1px solid rgba(32, 40, 47, 0.12);
     background: #ffffff;
-    color: #627727;
+    color: #20282f;
     font-weight: 900;
+  }
+
+  .footer-brand {
+    display: grid;
+    gap: 10px;
   }
 
   .footer img {
@@ -670,6 +706,65 @@ const serviceTags = [
 
   .footer p {
     margin: 0;
+    color: #627727;
+    font-size: 14px;
+  }
+
+  .footer-nav,
+  .footer-socials {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-nav {
+    justify-content: center;
+    gap: 22px;
+    font-size: 14px;
+  }
+
+  .footer-nav a,
+  .footer-socials a {
+    text-decoration: none;
+  }
+
+  .footer-nav a {
+    color: #20282f;
+  }
+
+  .footer-socials {
+    justify-content: end;
+    gap: 14px;
+  }
+
+  .footer-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(32, 40, 47, 0.14);
+    border-radius: 999px;
+    color: #20282f;
+    transition:
+      color 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease;
+  }
+
+  .footer-socials a:hover {
+    border-color: #d9a21b;
+    background: #d9a21b;
+    color: #ffffff;
+  }
+
+  .footer-socials svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   @media (max-width: 980px) {
@@ -713,6 +808,21 @@ const serviceTags = [
     .service-line,
     .logo-strip {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .footer-brand,
+    .footer-nav,
+    .footer-socials {
+      justify-content: center;
+    }
+
+    .footer img {
+      margin: 0 auto;
     }
   }
 
@@ -819,7 +929,12 @@ const serviceTags = [
     }
 
     .footer {
-      padding: 26px 18px;
+      padding: 30px 18px;
+    }
+
+    .footer-nav {
+      flex-wrap: wrap;
+      gap: 14px 20px;
     }
   }
 </style>
