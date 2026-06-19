@@ -244,11 +244,11 @@ const serviceTags = [
     left: 0;
     right: 0;
     display: grid;
-    grid-template-columns: minmax(130px, 190px) 1fr auto;
-    align-items: center;
+    grid-template-columns: 178px 1fr auto;
+    align-items: start;
     gap: 28px;
-    min-height: 82px;
-    padding: 16px 42px;
+    min-height: 142px;
+    padding: 18px 30px;
     color: #ffffff;
     background: linear-gradient(180deg, rgba(18, 26, 30, 0.78), rgba(18, 26, 30, 0));
   }
@@ -256,15 +256,14 @@ const serviceTags = [
   .brand {
     display: flex;
     align-items: center;
-    width: 190px;
-    height: 52px;
+    width: 178px;
+    height: auto;
   }
 
   .brand img {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 52px;
     object-fit: contain;
   }
 
@@ -666,6 +665,7 @@ const serviceTags = [
   .footer img {
     width: 178px;
     height: auto;
+    filter: brightness(0);
   }
 
   .footer p {
@@ -727,7 +727,7 @@ const serviceTags = [
 
     .brand {
       width: 154px;
-      height: 46px;
+      height: auto;
     }
 
     .header-cta {
