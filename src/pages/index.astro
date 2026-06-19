@@ -1,0 +1,825 @@
+---
+const clientLogos = [
+  { name: "Twinfield", src: "/assets/designbysanne/client-twinfield.png" },
+  { name: "D.A.T. Movement", src: "/assets/designbysanne/client-dat.png" },
+  { name: "SF Training Facilities", src: "/assets/designbysanne/client-sf.png" },
+  { name: "TechTron", src: "/assets/designbysanne/client-techtron.jpg" },
+  { name: "Provincie Gelderland", src: "/assets/designbysanne/client-provincie.png" },
+];
+
+const expertiseCards = [
+  {
+    number: "01",
+    title: "Strategie & positionering",
+    text: "Heldere keuzes over doelgroep, boodschap en richting, zodat je communicatie beter aansluit op wat je wilt uitstralen.",
+  },
+  {
+    number: "02",
+    title: "Marketing & communicatie",
+    text: "Campagnes, contentplanning, nieuwsbrieven en social media die passen bij je doelen en doelgroep.",
+  },
+  {
+    number: "03",
+    title: "Content, ontwerp & online uitvoering",
+    text: "Teksten, visuals, website-aanpassingen en middelen die professioneel voelen en praktisch inzetbaar zijn.",
+  },
+];
+
+const serviceTags = [
+  "Positionering",
+  "Contentstrategie",
+  "Campagnes",
+  "Websitecommunicatie",
+  "Social media",
+  "Visuele middelen",
+];
+---
+
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design by Sanne | Strategie, marketing en communicatie</title>
+    <meta
+      name="description"
+      content="Design by Sanne helpt bedrijven met strategie, marketing en communicatie: van positionering en content tot campagnes, websites en visuele uitvoering."
+    />
+    <link rel="canonical" href="https://designbysanne.nl/" />
+    <meta property="og:title" content="Design by Sanne | Strategie, marketing en communicatie" />
+    <meta
+      property="og:description"
+      content="Meer richting, structuur en zichtbaarheid in je marketing en communicatie."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://designbysanne.nl/" />
+    <meta property="og:image" content="/assets/designbysanne/sanne-hero.jpg" />
+    <link rel="icon" type="image/png" href="/assets/designbysanne/favicon-dbs.png" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Hoofdnavigatie">
+      <a class="brand" href="/" aria-label="Design by Sanne home">
+        <img src="/assets/designbysanne/logo-dbs-white.png" alt="Design by Sanne - strategie marketing communicatie" />
+      </a>
+      <nav class="nav-links" aria-label="Hoofdmenu">
+        <a href="/diensten/">Diensten</a>
+        <a href="/over-mij/">Over mij</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+      <a class="header-cta" href="#kennismaken">Kennismaken</a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">strategie &bull; marketing &bull; communicatie</p>
+          <h1 id="hero-title">Richting geven aan je verhaal.</h1>
+          <p class="hero-lead">
+            Ik help bedrijven met strategie, marketing en communicatie: van duidelijke keuzes
+            en sterke content tot campagnes, websites en visuele middelen die kloppen met je verhaal.
+          </p>
+          <div class="hero-actions" aria-label="Belangrijkste acties">
+            <a class="button button-primary" href="#expertise">Bekijk wat ik doe</a>
+            <a class="button button-secondary" href="#kennismaken">Plan een kennismaking</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="statement" aria-label="Korte positionering">
+        <div class="statement-inner">
+          <p>
+            Voor organisaties die voelen dat er meer in hun marketing en communicatie zit,
+            maar behoefte hebben aan overzicht, keuzes en iemand die het ook praktisch uitvoert.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-light" id="expertise" aria-labelledby="expertise-title">
+        <div class="section-heading">
+          <p class="section-kicker">Waar ik je mee help</p>
+          <h2 id="expertise-title">Meer richting, structuur en herkenbaarheid.</h2>
+          <p>
+            Ik denk mee over de lijn en help daarna met de uitvoering. Zo worden strategie,
+            content, ontwerp en online zichtbaarheid een logisch geheel.
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+          {
+            expertiseCards.map((card) => (
+              <article class="expertise-card">
+                <span>{card.number}</span>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="service-line" aria-label="Diensten in het kort">
+          {serviceTags.map((service) => <span>{service}</span>)}
+        </div>
+      </section>
+
+      <section class="section section-split" aria-labelledby="about-title">
+        <div class="split-copy">
+          <p class="section-kicker">Over Sanne</p>
+          <h2 id="about-title">Strategisch genoeg om richting te geven, praktisch genoeg om door te pakken.</h2>
+          <p>
+            Ik ben Sanne, een marketing- en communicatieprofessional die graag overzicht brengt.
+            Ik denk mee over richting, boodschap en zichtbaarheid, en help daarna ook met de praktische
+            uitvoering: van content en campagnes tot websites en visuele communicatie.
+          </p>
+          <a class="text-link" href="/over-mij/">Meer over mij</a>
+        </div>
+        <div class="proof-panel" aria-label="Waarom samenwerken">
+          <div>
+            <strong>10+</strong>
+            <span>jaar ervaring in marketing, communicatie en ontwerp</span>
+          </div>
+          <div>
+            <strong>1</strong>
+            <span>aanspreekpunt voor strategie, content en uitvoering</span>
+          </div>
+          <div>
+            <strong>3</strong>
+            <span>vaste pijlers: richting, structuur en zichtbaarheid</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="logo-section" aria-labelledby="logos-title">
+        <div class="logo-heading">
+          <p class="section-kicker">Ervaring</p>
+          <h2 id="logos-title">Voor en bij organisaties zoals</h2>
+        </div>
+        <div class="logo-strip">
+          {
+            clientLogos.map((logo) => (
+              <div class="logo-tile">
+                <img src={logo.src} alt={`Logo ${logo.name}`} loading="lazy" />
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="section section-dark" aria-labelledby="work-title">
+        <div class="section-heading section-heading-dark">
+          <p class="section-kicker">Werkwijze</p>
+          <h2 id="work-title">Rust in het proces, scherpte in de keuzes.</h2>
+        </div>
+        <div class="work-steps">
+          <article>
+            <span>Stap 1</span>
+            <h3>Scherp krijgen</h3>
+            <p>Doelen, doelgroep, boodschap en prioriteiten helder maken.</p>
+          </article>
+          <article>
+            <span>Stap 2</span>
+            <h3>Maken & uitvoeren</h3>
+            <p>Content, campagnes, pagina's en visuele middelen ontwikkelen.</p>
+          </article>
+          <article>
+            <span>Stap 3</span>
+            <h3>Bijsturen</h3>
+            <p>Kijken wat werkt en verbeteren waar de communicatie sterker kan.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="final-cta" id="kennismaken" aria-labelledby="contact-title">
+        <div>
+          <p class="section-kicker">Kennismaken</p>
+          <h2 id="contact-title">Twijfel je waar je moet beginnen?</h2>
+          <p>
+            Wil je meer richting, structuur of zichtbaarheid in je marketing en communicatie?
+            Laten we samen kijken wat jouw organisatie nodig heeft.
+          </p>
+        </div>
+        <a class="button button-primary" href="/contact/">Plan een kennismaking</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="/assets/designbysanne/logo-dbs-blue.png" alt="Design by Sanne - strategie marketing communicatie" />
+      <p>strategie &bull; marketing &bull; communicatie</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    background: #f5f4ef;
+    color: #20282f;
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+  }
+
+  .site-header {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: minmax(130px, 190px) 1fr auto;
+    align-items: center;
+    gap: 28px;
+    min-height: 82px;
+    padding: 16px 42px;
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(18, 26, 30, 0.78), rgba(18, 26, 30, 0));
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    width: 190px;
+    height: 52px;
+  }
+
+  .brand img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 52px;
+    object-fit: contain;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .nav-links a,
+  .header-cta,
+  .text-link,
+  .button {
+    text-decoration: none;
+  }
+
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 6px;
+    font-weight: 900;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: end;
+    overflow: hidden;
+    isolation: isolate;
+    background: #20282f;
+  }
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    background-image: url("/assets/designbysanne/sanne-hero.jpg");
+    background-size: cover;
+    background-position: center 28%;
+    transform: scale(1.02);
+  }
+
+  .hero-shade {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(90deg, rgba(16, 24, 28, 0.88) 0%, rgba(16, 24, 28, 0.67) 38%, rgba(16, 24, 28, 0.18) 72%),
+      linear-gradient(0deg, rgba(16, 24, 28, 0.72), rgba(16, 24, 28, 0.05) 50%);
+  }
+
+  .hero-content {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 154px 0 90px;
+    color: #ffffff;
+  }
+
+  .eyebrow,
+  .section-kicker {
+    margin: 0 0 14px;
+    color: #dca326;
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1 {
+    max-width: 760px;
+    margin-bottom: 24px;
+    font-size: 72px;
+    line-height: 0.98;
+    font-weight: 900;
+  }
+
+  .hero-lead {
+    max-width: 740px;
+    margin-bottom: 34px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 22px;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 24px;
+    border-radius: 6px;
+    font-weight: 900;
+  }
+
+  .button-primary {
+    background: #dca326;
+    color: #162024;
+  }
+
+  .button-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    color: #ffffff;
+  }
+
+  .statement {
+    background: #627727;
+    color: #ffffff;
+  }
+
+  .statement-inner {
+    width: min(1060px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 34px 0;
+  }
+
+  .statement p {
+    max-width: 980px;
+    margin: 0;
+    font-size: 26px;
+    line-height: 1.42;
+    font-weight: 800;
+  }
+
+  .section {
+    padding: 94px 24px;
+  }
+
+  .section-light {
+    background: #f5f4ef;
+  }
+
+  .section-heading {
+    width: min(860px, 100%);
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .section-heading h2,
+  .split-copy h2,
+  .logo-heading h2,
+  .final-cta h2 {
+    margin-bottom: 18px;
+    color: #1f2a2f;
+    font-size: 46px;
+    line-height: 1.08;
+    font-weight: 900;
+  }
+
+  .section-heading p:not(.section-kicker),
+  .split-copy p,
+  .final-cta p {
+    color: #586167;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .expertise-grid {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .expertise-card {
+    min-height: 300px;
+    padding: 28px;
+    border: 1px solid rgba(32, 40, 47, 0.12);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(32, 40, 47, 0.08);
+  }
+
+  .expertise-card span {
+    display: block;
+    margin-bottom: 54px;
+    color: #9a4d42;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .expertise-card h3 {
+    margin-bottom: 14px;
+    color: #627727;
+    font-size: 25px;
+    line-height: 1.18;
+  }
+
+  .expertise-card p {
+    margin-bottom: 0;
+    color: #586167;
+    line-height: 1.62;
+  }
+
+  .service-line {
+    width: min(1120px, 100%);
+    margin: 28px auto 0;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    border-top: 1px solid rgba(32, 40, 47, 0.12);
+    border-left: 1px solid rgba(32, 40, 47, 0.12);
+  }
+
+  .service-line span {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-right: 1px solid rgba(32, 40, 47, 0.12);
+    border-bottom: 1px solid rgba(32, 40, 47, 0.12);
+    background: #faf9f5;
+    color: #20282f;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .section-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+    gap: 44px;
+    align-items: stretch;
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .split-copy {
+    align-self: center;
+  }
+
+  .text-link {
+    display: inline-flex;
+    margin-top: 10px;
+    color: #627727;
+    font-weight: 900;
+  }
+
+  .proof-panel {
+    display: grid;
+    gap: 1px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(32, 40, 47, 0.14);
+    box-shadow: 0 18px 40px rgba(32, 40, 47, 0.08);
+  }
+
+  .proof-panel div {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    align-items: center;
+    min-height: 126px;
+    padding: 24px;
+    background: #ffffff;
+  }
+
+  .proof-panel strong {
+    color: #dca326;
+    font-size: 42px;
+    line-height: 1;
+  }
+
+  .proof-panel span {
+    color: #586167;
+    line-height: 1.55;
+    font-weight: 800;
+  }
+
+  .logo-section {
+    padding: 86px 24px;
+    background: #ffffff;
+  }
+
+  .logo-heading {
+    width: min(760px, 100%);
+    margin: 0 auto 32px;
+    text-align: center;
+  }
+
+  .logo-strip {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .logo-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 122px;
+    padding: 18px;
+    border: 1px solid rgba(32, 40, 47, 0.1);
+    border-radius: 8px;
+    background: #f5f4ef;
+  }
+
+  .logo-tile img {
+    display: block;
+    max-width: 160px;
+    max-height: 62px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .section-dark {
+    background: #20282f;
+    color: #ffffff;
+  }
+
+  .section-heading-dark h2 {
+    color: #ffffff;
+  }
+
+  .work-steps {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .work-steps article {
+    min-height: 238px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .work-steps span {
+    display: block;
+    margin-bottom: 48px;
+    color: #dca326;
+    font-weight: 900;
+  }
+
+  .work-steps h3 {
+    margin-bottom: 12px;
+    font-size: 25px;
+  }
+
+  .work-steps p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.62;
+  }
+
+  .final-cta {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 86px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 36px;
+    align-items: center;
+  }
+
+  .final-cta p {
+    max-width: 720px;
+    margin-bottom: 0;
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 32px 42px;
+    border-top: 1px solid rgba(32, 40, 47, 0.12);
+    background: #ffffff;
+    color: #627727;
+    font-weight: 900;
+  }
+
+  .footer img {
+    width: 178px;
+    height: auto;
+  }
+
+  .footer p {
+    margin: 0;
+  }
+
+  @media (max-width: 980px) {
+    .site-header {
+      grid-template-columns: 170px 1fr;
+      padding: 14px 24px;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .header-cta {
+      justify-self: end;
+    }
+
+    h1 {
+      max-width: 620px;
+      font-size: 56px;
+    }
+
+    .hero-lead,
+    .statement p {
+      font-size: 20px;
+    }
+
+    .section-heading h2,
+    .split-copy h2,
+    .logo-heading h2,
+    .final-cta h2 {
+      font-size: 36px;
+    }
+
+    .expertise-grid,
+    .work-steps,
+    .section-split,
+    .final-cta {
+      grid-template-columns: 1fr;
+    }
+
+    .service-line,
+    .logo-strip {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 620px) {
+    .site-header {
+      position: absolute;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      min-height: 0;
+      padding: 18px;
+    }
+
+    .brand {
+      width: 154px;
+      height: 46px;
+    }
+
+    .header-cta {
+      justify-self: start;
+      min-height: 38px;
+      padding: 0 14px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 92vh;
+    }
+
+    .hero-media {
+      background-position: 60% center;
+    }
+
+    .hero-shade {
+      background:
+        linear-gradient(90deg, rgba(16, 24, 28, 0.88), rgba(16, 24, 28, 0.42)),
+        linear-gradient(0deg, rgba(16, 24, 28, 0.84), rgba(16, 24, 28, 0.1) 62%);
+    }
+
+    .hero-content {
+      width: min(100% - 36px, 1120px);
+      padding: 164px 0 58px;
+    }
+
+    h1 {
+      font-size: 43px;
+      line-height: 1.02;
+    }
+
+    .hero-lead {
+      font-size: 18px;
+    }
+
+    .hero-actions,
+    .button {
+      width: 100%;
+    }
+
+    .section {
+      padding: 68px 18px;
+    }
+
+    .statement-inner,
+    .section-split,
+    .final-cta {
+      width: min(100% - 36px, 1120px);
+    }
+
+    .section-heading h2,
+    .split-copy h2,
+    .logo-heading h2,
+    .final-cta h2 {
+      font-size: 31px;
+      line-height: 1.14;
+    }
+
+    .expertise-card,
+    .work-steps article {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    .expertise-card span,
+    .work-steps span {
+      margin-bottom: 34px;
+    }
+
+    .service-line,
+    .logo-strip {
+      grid-template-columns: 1fr;
+    }
+
+    .logo-tile {
+      min-height: 100px;
+    }
+
+    .proof-panel div {
+      grid-template-columns: 72px 1fr;
+      min-height: 112px;
+      padding: 20px;
+    }
+
+    .proof-panel strong {
+      font-size: 34px;
+    }
+
+    .footer {
+      padding: 26px 18px;
+    }
+  }
+</style>
