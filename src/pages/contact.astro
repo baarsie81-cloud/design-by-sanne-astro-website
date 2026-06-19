@@ -1,0 +1,396 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const calendlyUrl = "https://calendly.com/designbysanne-info/30min";
+const emailAddress = "info@designbysanne.nl";
+
+const contactReasons = [
+  {
+    number: "01",
+    title: "Strategie & positionering",
+    text: "Voor meer richting in doelgroep, boodschap, aanbod of de manier waarop je organisatie zichtbaar wordt.",
+  },
+  {
+    number: "02",
+    title: "Marketing, content & campagnes",
+    text: "Voor hulp bij contentplanning, social media, nieuwsbrieven, campagnes of duidelijke klantcommunicatie.",
+  },
+  {
+    number: "03",
+    title: "Website, ontwerp & online uitvoering",
+    text: "Voor websitecontent, pagina-aanpassingen, visuele middelen en praktische uitvoering die past bij je verhaal.",
+  },
+];
+---
+
+<BaseLayout
+  title="Contact | Design by Sanne"
+  description="Neem contact op met Design by Sanne voor strategie, marketing en communicatie. Plan een kennismaking of stuur een bericht."
+  canonical="https://designbysanne.nl/contact/"
+  ogTitle="Contact | Design by Sanne"
+  ogDescription="Plan een kennismaking of stuur een bericht over strategie, marketing en communicatie."
+  ogImage="/assets/designbysanne/contact-sanne.jpg"
+>
+  <main>
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <div class="contact-hero-inner">
+        <div class="contact-hero-copy">
+          <p class="contact-kicker">Contact</p>
+          <h1 id="contact-title">Laten we kennismaken.</h1>
+          <p>
+            Wil je meer richting, structuur of zichtbaarheid in je marketing en communicatie?
+            Laat kort weten waar je mee bezig bent, dan kijk ik graag met je mee.
+          </p>
+          <div class="contact-actions" aria-label="Contactmogelijkheden">
+            <a class="button button-primary" href={`mailto:${emailAddress}`}>Stuur een mail</a>
+            <a class="button button-secondary" href={calendlyUrl}>Plan een kennismaking</a>
+          </div>
+        </div>
+        <figure class="contact-hero-visual">
+          <img src="/assets/designbysanne/contact-sanne.jpg" alt="Sanne van Design by Sanne tijdens een telefoongesprek" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="contact-statement" aria-label="Korte contacttekst">
+      <p>
+        Een eerste bericht hoeft niet perfect uitgewerkt te zijn. Een vraag, idee of uitdaging is genoeg
+        om samen te kijken wat logisch is.
+      </p>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-reasons-title">
+      <div class="section-heading">
+        <p class="contact-kicker">Waarvoor kun je contact opnemen?</p>
+        <h2 id="contact-reasons-title">Voor plannen die scherper, zichtbaarder of praktischer mogen worden.</h2>
+        <p>
+          Of je nu nog aan het zoeken bent naar richting of al precies weet wat er nodig is:
+          ik denk mee en help om de volgende stap concreet te maken.
+        </p>
+      </div>
+
+      <div class="reason-grid">
+        {
+          contactReasons.map((reason) => (
+            <article class="reason-card">
+              <span>{reason.number}</span>
+              <h3>{reason.title}</h3>
+              <p>{reason.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="contact-options" id="kennismaken" aria-labelledby="contact-options-title">
+      <div class="contact-options-copy">
+        <p class="contact-kicker">Direct contact</p>
+        <h2 id="contact-options-title">Kies wat voor jou het prettigst werkt.</h2>
+        <p>
+          Stuur een korte mail of plan meteen een moment in. Dan kijken we rustig waar je staat
+          en welke stap past bij jouw organisatie.
+        </p>
+      </div>
+
+      <div class="option-grid">
+        <article class="option-card">
+          <span>E-mail</span>
+          <h3>Stuur een bericht</h3>
+          <p>Vertel kort waar je vraag over gaat. Ik neem daarna contact met je op.</p>
+          <a class="button button-primary" href={`mailto:${emailAddress}`}>Stuur een mail</a>
+        </article>
+
+        <article class="option-card option-card-featured">
+          <span>Kennismaken</span>
+          <h3>Plan direct een kennismaking</h3>
+          <p>Liever direct plannen? Kies een moment dat voor jou past.</p>
+          <a class="button button-primary" href={calendlyUrl}>Plan een kennismaking</a>
+        </article>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    padding: 190px 24px 82px;
+    background:
+      linear-gradient(90deg, rgba(32, 40, 47, 0.96), rgba(32, 40, 47, 0.76)),
+      radial-gradient(circle at 82% 24%, rgba(220, 163, 38, 0.3), transparent 34%),
+      #20282f;
+    color: #ffffff;
+  }
+
+  .contact-hero-inner {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.76fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .contact-kicker {
+    margin: 0 0 14px;
+    color: #dca326;
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .contact-hero h1 {
+    margin-bottom: 24px;
+    font-size: 68px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .contact-hero p:not(.contact-kicker) {
+    margin-bottom: 34px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 22px;
+    line-height: 1.55;
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .contact-hero-visual {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+  }
+
+  .contact-hero-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(32, 40, 47, 0.02), rgba(32, 40, 47, 0.18));
+    pointer-events: none;
+  }
+
+  .contact-hero-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 38%;
+  }
+
+  .contact-statement {
+    background: #627727;
+    color: #ffffff;
+  }
+
+  .contact-statement p {
+    width: min(1060px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 34px 0;
+    font-size: 26px;
+    line-height: 1.42;
+    font-weight: 800;
+  }
+
+  .contact-section {
+    padding: 94px 24px;
+    background: #f5f4ef;
+  }
+
+  .section-heading {
+    width: min(880px, 100%);
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .section-heading h2,
+  .contact-options h2 {
+    margin-bottom: 18px;
+    color: #1f2a2f;
+    font-size: 46px;
+    line-height: 1.08;
+    font-weight: 900;
+  }
+
+  .section-heading p:not(.contact-kicker),
+  .contact-options p:not(.contact-kicker) {
+    color: #586167;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .reason-grid {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .reason-card,
+  .option-card {
+    border: 1px solid rgba(32, 40, 47, 0.12);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(32, 40, 47, 0.08);
+  }
+
+  .reason-card {
+    min-height: 292px;
+    padding: 28px;
+  }
+
+  .reason-card span,
+  .option-card span {
+    display: block;
+    margin-bottom: 44px;
+    color: #9a4d42;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .reason-card h3,
+  .option-card h3 {
+    margin-bottom: 14px;
+    color: #627727;
+    font-size: 27px;
+    line-height: 1.18;
+  }
+
+  .reason-card p,
+  .option-card p {
+    margin-bottom: 0;
+    color: #586167;
+    line-height: 1.62;
+  }
+
+  .contact-options {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 0 0 92px;
+  }
+
+  .contact-options-copy {
+    max-width: 780px;
+    margin-bottom: 32px;
+  }
+
+  .option-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .option-card {
+    min-height: 314px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .option-card p {
+    margin-bottom: 28px;
+  }
+
+  .option-card .button {
+    margin-top: auto;
+  }
+
+  .option-card-featured {
+    background: #dca326;
+    color: #162024;
+  }
+
+  .option-card-featured span,
+  .option-card-featured h3,
+  .option-card-featured p {
+    color: #162024;
+  }
+
+  .option-card-featured .button-primary {
+    background: #ffffff;
+    color: #627727;
+  }
+
+  @media (max-width: 980px) {
+    .contact-hero-inner,
+    .reason-grid,
+    .option-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-hero-visual {
+      max-width: 560px;
+    }
+
+    .contact-hero h1 {
+      font-size: 54px;
+    }
+
+    .contact-hero p:not(.contact-kicker),
+    .contact-statement p {
+      font-size: 20px;
+    }
+
+    .section-heading h2,
+    .contact-options h2 {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .contact-hero {
+      min-height: 82vh;
+      padding: 164px 18px 58px;
+    }
+
+    .contact-hero h1 {
+      font-size: 42px;
+      line-height: 1.04;
+    }
+
+    .contact-hero p:not(.contact-kicker) {
+      font-size: 18px;
+    }
+
+    .contact-hero-visual {
+      aspect-ratio: 16 / 11;
+    }
+
+    .contact-statement p,
+    .contact-options {
+      width: min(100% - 36px, 1120px);
+    }
+
+    .contact-section {
+      padding: 68px 18px;
+    }
+
+    .section-heading h2,
+    .contact-options h2 {
+      font-size: 31px;
+      line-height: 1.14;
+    }
+
+    .reason-card,
+    .option-card {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    .reason-card span,
+    .option-card span {
+      margin-bottom: 34px;
+    }
+  }
+</style>
