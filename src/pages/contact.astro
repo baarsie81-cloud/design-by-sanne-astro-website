@@ -1,68 +1,77 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import contactContent from "../data/contact.json";
 
-const calendlyUrl = "https://calendly.com/designbysanne-info/30min";
-const emailAddress = "info@designbysanne.nl";
+const {
+  seoTitle,
+  seoDescription,
+  kicker,
+  heroTitle,
+  heroIntro,
+  emailAddress,
+  calendlyUrl,
+  heroImage,
+  heroImageAlt,
+  statementText,
+  optionsKicker,
+  optionsTitle,
+  optionsIntro,
+  emailCardTitle,
+  emailCardText,
+  meetingCardTitle,
+  meetingCardText,
+} = contactContent;
 ---
 
 <BaseLayout
-  title="Contact | Design by Sanne"
-  description="Neem contact op met Design by Sanne voor strategie, marketing en communicatie. Plan een kennismaking of stuur een bericht."
+  title={seoTitle}
+  description={seoDescription}
   canonical="https://designbysanne.nl/contact/"
-  ogTitle="Contact | Design by Sanne"
-  ogDescription="Plan een kennismaking of stuur een bericht over strategie, marketing en communicatie."
-  ogImage="/assets/designbysanne/contact-sanne.jpg"
+  ogTitle={seoTitle}
+  ogDescription={seoDescription}
+  ogImage={heroImage}
 >
   <main>
     <section class="contact-hero" aria-labelledby="contact-title">
       <div class="contact-hero-inner">
         <div class="contact-hero-copy">
-          <p class="contact-kicker">Contact</p>
-          <h1 id="contact-title">Laten we kennismaken.</h1>
-          <p>
-            Wil je meer richting, structuur of zichtbaarheid in je marketing en communicatie?
-            Laat kort weten waar je mee bezig bent, dan kijk ik graag met je mee.
-          </p>
+          <p class="contact-kicker">{kicker}</p>
+          <h1 id="contact-title">{heroTitle}</h1>
+          <p>{heroIntro}</p>
           <div class="contact-actions" aria-label="Contactmogelijkheden">
             <a class="button button-primary" href={`mailto:${emailAddress}`}>Stuur een mail</a>
             <a class="button button-secondary" href={calendlyUrl}>Plan een kennismaking</a>
           </div>
         </div>
         <figure class="contact-hero-visual">
-          <img src="/assets/designbysanne/contact-sanne.jpg" alt="Sanne van Design by Sanne tijdens een telefoongesprek" />
+          <img src={heroImage} alt={heroImageAlt} />
         </figure>
       </div>
     </section>
 
     <section class="contact-statement" aria-label="Korte contacttekst">
-      <p>
-        Een eerste bericht hoeft niet perfect uitgewerkt te zijn. Een vraag, idee of uitdaging is genoeg
-        om samen te kijken wat logisch is.
-      </p>
+      <p>{statementText}</p>
     </section>
 
     <section class="contact-options" id="kennismaken" aria-labelledby="contact-options-title">
       <div class="contact-options-copy">
-        <p class="contact-kicker">Direct contact</p>
-        <h2 id="contact-options-title">Kies wat voor jou het prettigst werkt.</h2>
-        <p>
-          Stuur een korte mail of plan meteen een moment in. Dan kijken we rustig waar je staat
-          en welke stap past bij jouw organisatie.
-        </p>
+        <p class="contact-kicker">{optionsKicker}</p>
+        <h2 id="contact-options-title">{optionsTitle}</h2>
+        <p>{optionsIntro}</p>
       </div>
 
       <div class="option-grid">
         <article class="option-card">
           <span>E-mail</span>
-          <h3>Stuur een bericht</h3>
-          <p>Vertel kort waar je vraag over gaat. Ik neem daarna contact met je op.</p>
+          <h3>{emailCardTitle}</h3>
+          <p>{emailCardText}</p>
           <a class="button button-primary" href={`mailto:${emailAddress}`}>Stuur een mail</a>
         </article>
 
         <article class="option-card option-card-featured">
           <span>Kennismaken</span>
-          <h3>Plan direct een kennismaking</h3>
-          <p>Liever direct plannen? Kies een moment dat voor jou past.</p>
+          <h3>{meetingCardTitle}</h3>
+          <p>{meetingCardText}</p>
           <a class="button button-primary" href={calendlyUrl}>Plan een kennismaking</a>
         </article>
       </div>
