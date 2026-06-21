@@ -87,6 +87,75 @@ p {
   font-weight: 900;
 }
 
+.mobile-menu {
+  display: none;
+  position: relative;
+  justify-self: end;
+}
+
+.mobile-menu summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+  list-style: none;
+}
+
+.mobile-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-menu-icon {
+  display: grid;
+  gap: 4px;
+  width: 18px;
+}
+
+.mobile-menu-icon span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.mobile-menu-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(260px, calc(100vw - 36px));
+  display: grid;
+  gap: 2px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(24, 32, 37, 0.98);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
+}
+
+.mobile-menu-panel a {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.mobile-menu-panel a:hover,
+.mobile-menu-panel a:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -218,6 +287,10 @@ p {
     display: none;
   }
 
+  .mobile-menu {
+    display: block;
+  }
+
   .header-cta {
     justify-self: end;
   }
@@ -241,8 +314,9 @@ p {
 @media (max-width: 620px) {
   .site-header {
     position: absolute;
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: 154px auto;
+    align-items: start;
+    gap: 14px;
     min-height: 0;
     padding: 18px;
   }
@@ -253,10 +327,28 @@ p {
   }
 
   .header-cta {
-    justify-self: start;
+    display: none;
+  }
+
+  .mobile-menu summary {
     min-height: 38px;
-    padding: 0 14px;
+    padding: 0 12px;
     font-size: 14px;
+  }
+
+  .mobile-menu {
+    position: static;
+  }
+
+  .mobile-menu-panel {
+    top: 122px;
+    right: 18px;
+    left: 18px;
+    width: auto;
+  }
+
+  .mobile-menu-label {
+    display: none;
   }
 
   .button {
