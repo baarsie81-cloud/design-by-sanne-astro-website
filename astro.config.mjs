@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 import keystatic from "@keystatic/astro";
 import react from "@astrojs/react";
 
@@ -8,7 +8,7 @@ const isLiveKeystatic = process.env.KEYSTATIC_MODE === "github";
 
 export default defineConfig({
   site: "https://designbysanne.nl",
-  output: isLiveKeystatic ? "hybrid" : !isProduction ? "server" : "static",
+  output: !isProduction ? "server" : "static",
   adapter: isLiveKeystatic ? vercel() : undefined,
   integrations: isLiveKeystatic || !isProduction ? [react(), keystatic()] : [],
 });
