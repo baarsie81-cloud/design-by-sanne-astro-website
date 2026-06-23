@@ -15,4 +15,14 @@ pnpm run dev
 pnpm run build
 ```
 
-De huidige WordPress-site blijft voorlopig live. Deze Astro-site wordt pagina voor pagina opgebouwd met WordPress als inhoudelijke bron.
+## Keystatic
+
+Lokaal is Keystatic bereikbaar via:
+
+```bash
+pnpm run dev
+```
+
+Daarna open je `/keystatic`.
+
+Live blijft Keystatic standaard uit. Zet in Vercel pas `KEYSTATIC_MODE=github` wanneer de GitHub-login en Keystatic environment variables zijn ingesteld. Voor nu is alleen de contactpagina bewerkbaar gemaakt.

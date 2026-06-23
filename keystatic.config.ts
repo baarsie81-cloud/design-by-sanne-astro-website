@@ -1,9 +1,18 @@
 import { config, fields, singleton } from "@keystatic/core";
 
+const isGitHubMode = process.env.KEYSTATIC_MODE === "github";
+
 export default config({
-  storage: {
-    kind: "local",
-  },
+  storage: isGitHubMode
+    ? {
+        kind: "github",
+        repo:
+          process.env.KEYSTATIC_GITHUB_REPO ??
+          "baarsie81-cloud/design-by-sanne-astro-website",
+      }
+    : {
+        kind: "local",
+      },
   ui: {
     brand: {
       name: "Design by Sanne CMS",
