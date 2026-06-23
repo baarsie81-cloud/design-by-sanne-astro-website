@@ -1,13 +1,13 @@
 import { config, fields, singleton } from "@keystatic/core";
 
-const isGitHubMode = process.env.KEYSTATIC_MODE === "github";
+const isGitHubMode = import.meta.env.PUBLIC_KEYSTATIC_MODE === "github";
 
 export default config({
   storage: isGitHubMode
     ? {
         kind: "github",
         repo:
-          process.env.KEYSTATIC_GITHUB_REPO ??
+          import.meta.env.PUBLIC_KEYSTATIC_GITHUB_REPO ??
           "baarsie81-cloud/design-by-sanne-astro-website",
       }
     : {

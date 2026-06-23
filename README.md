@@ -25,4 +25,4 @@ pnpm run dev
 
 Daarna open je `/keystatic`.
 
-Live blijft Keystatic standaard uit. Zet in Vercel pas `KEYSTATIC_MODE=github` wanneer de GitHub-login en Keystatic environment variables zijn ingesteld. Voor nu is alleen de contactpagina bewerkbaar gemaakt.
+Live blijft Keystatic standaard uit. Zet in Vercel pas `KEYSTATIC_MODE=github` en `PUBLIC_KEYSTATIC_MODE=github` wanneer de GitHub-login en Keystatic environment variables zijn ingesteld. Voor nu is alleen de contactpagina bewerkbaar gemaakt.
