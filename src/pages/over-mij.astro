@@ -1,112 +1,93 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import overMijContent from "../data/overMij.json";
+import siteSettings from "../data/siteSettings.json";
 
-const calendlyUrl = "https://calendly.com/designbysanne-info/30min";
+const {
+  seoTitle,
+  seoDescription,
+  ogDescription,
+  kicker,
+  heroTitleStart,
+  heroTitleEmphasis,
+  heroTitleEnd,
+  heroIntro,
+  heroButtonLabel,
+  heroImage,
+  heroImageAlt,
+  statementText,
+  storyKicker,
+  storyTitle,
+  storyText,
+  proofItems,
+  strengthsKicker,
+  strengthsTitle,
+  strengthsIntro,
+  strengths,
+  personalKicker,
+  personalTitle,
+  personalText,
+  testimonialsKicker,
+  testimonialsTitle,
+  testimonialsIntro,
+  testimonials,
+  ctaKicker,
+  ctaTitle,
+  ctaText,
+  ctaButtonLabel,
+} = overMijContent;
 
-const strengths = [
-  {
-    number: "01",
-    title: "Strategisch meedenken",
-    text: "Ik help richting, doelgroep, boodschap en keuzes scherp te krijgen, zodat marketing en communicatie meer samenhang krijgen.",
-  },
-  {
-    number: "02",
-    title: "Praktisch uitvoeren",
-    text: "Van content en campagnes tot website-aanpassingen, nieuwsbrieven, social media en visuele middelen: ideeën worden concreet.",
-  },
-  {
-    number: "03",
-    title: "Rust en structuur",
-    text: "Ik breng overzicht in losse ideeën, acties en communicatiekanalen, zodat duidelijk wordt wat prioriteit heeft.",
-  },
-];
-
-const testimonials = [
-  {
-    quote: "Sanne maakte een vlotte vertaling van mijn ideeën naar een bruikbare flyer. Goed, betaalbaar en vlot!",
-    name: "Wim Flier",
-    company: "Flier Fietsen",
-  },
-  {
-    quote: "Ze vertaalt mijn ideeën naar concrete, klantvriendelijke voorstellen. Dankzij haar is alles soepeler en efficiënter.",
-    name: "Jan Bloem",
-    company: "D.A.T. Movement",
-  },
-  {
-    quote: "Ze is professioneel, komt afspraken na en is breed inzetbaar. Betrouwbaarheid staat bij haar voorop.",
-    name: "Jan Willem Rolfers",
-    company: "SF Training Facilities",
-  },
-];
+const { calendlyUrl } = siteSettings;
 ---
 
 <BaseLayout
-  title="Over mij | Design by Sanne"
-  description="Maak kennis met Sanne: marketing- en communicatieprofessional die bedrijven helpt met strategie, content, campagnes, websites en visuele uitvoering."
+  title={seoTitle}
+  description={seoDescription}
   canonical="https://designbysanne.nl/over-mij/"
-  ogTitle="Over mij | Design by Sanne"
-  ogDescription="Maak kennis met Sanne, marketing- en communicatieprofessional met oog voor strategie en uitvoering."
+  ogTitle={seoTitle}
+  ogDescription={ogDescription}
+  ogImage={heroImage}
 >
   <main>
     <section class="about-hero" aria-labelledby="about-title">
       <div class="about-hero-inner">
         <div class="about-hero-copy">
-          <p class="about-kicker">Over Sanne</p>
-          <h1 id="about-title">Marketing- en <span class="nowrap-word">communicatieprofessional</span> met oog voor strategie én uitvoering.</h1>
-          <p>
-            Ik ben Sanne. Ik help bedrijven om meer richting, structuur en zichtbaarheid te brengen
-            in hun marketing en communicatie. Ik denk mee over strategie, boodschap en content,
-            en help daarna ook met de praktische uitvoering.
-          </p>
-          <a class="button button-primary" href={calendlyUrl}>Plan een kennismaking</a>
+          <p class="about-kicker">{kicker}</p>
+          <h1 id="about-title">{heroTitleStart} <span class="nowrap-word">{heroTitleEmphasis}</span> {heroTitleEnd}</h1>
+          <p>{heroIntro}</p>
+          <a class="button button-primary" href={calendlyUrl}>{heroButtonLabel}</a>
         </div>
         <figure class="about-hero-visual">
-          <img src="/assets/designbysanne/over-mij-sanne.jpg" alt="Sanne van Design by Sanne" />
+          <img src={heroImage} alt={heroImageAlt} />
         </figure>
       </div>
     </section>
 
     <section class="about-statement" aria-label="Korte samenvatting">
-      <p>
-        Ik combineer creativiteit, overzicht en doorpakken: niet alleen bedenken wat goed zou zijn,
-        maar het ook helder en praktisch realiseren.
-      </p>
+      <p>{statementText}</p>
     </section>
 
     <section class="about-story" aria-labelledby="story-title">
       <div class="about-story-copy">
-        <p class="about-kicker">Van ontwerp naar bredere marketingpartner</p>
-        <h2 id="story-title">Design by Sanne groeide mee met de vragen van organisaties.</h2>
-        <p>
-          Design by Sanne begon vanuit hands-on ontwerpen en praktische ondersteuning. Inmiddels is mijn rol
-          breder geworden: ik help organisaties met positionering, marketing, communicatie, content,
-          campagnes, websites en visuele middelen die samen één duidelijke lijn vormen.
-        </p>
+        <p class="about-kicker">{storyKicker}</p>
+        <h2 id="story-title">{storyTitle}</h2>
+        <p>{storyText}</p>
       </div>
       <div class="about-proof" aria-label="Waar ik voor sta">
-        <div>
-          <strong>Richting</strong>
-          <span>heldere keuzes en een verhaal dat klopt</span>
-        </div>
-        <div>
-          <strong>Structuur</strong>
-          <span>overzicht in plannen, content en communicatiekanalen</span>
-        </div>
-        <div>
-          <strong>Zichtbaarheid</strong>
-          <span>middelen die professioneel voelen en praktisch werken</span>
-        </div>
+        {proofItems.map((item) => (
+          <div>
+            <strong>{item.title}</strong>
+            <span>{item.text}</span>
+          </div>
+        ))}
       </div>
     </section>
 
     <section class="about-section" aria-labelledby="strengths-title">
       <div class="section-heading">
-        <p class="about-kicker">Wat je aan mij hebt</p>
-        <h2 id="strengths-title">Meedenken op hoofdlijnen én helpen uitvoeren.</h2>
-        <p>
-          Ik werk graag dicht op de inhoud: eerst scherp krijgen wat nodig is,
-          daarna zorgen dat de juiste middelen ook echt gemaakt worden.
-        </p>
+        <p class="about-kicker">{strengthsKicker}</p>
+        <h2 id="strengths-title">{strengthsTitle}</h2>
+        <p>{strengthsIntro}</p>
       </div>
 
       <div class="strength-grid">
@@ -124,21 +105,17 @@ const testimonials = [
 
     <section class="personal-section" aria-labelledby="personal-title">
       <div>
-        <p class="about-kicker">Ook Sanne</p>
-        <h2 id="personal-title">Betrokken, eerlijk en graag praktisch bezig.</h2>
+        <p class="about-kicker">{personalKicker}</p>
+        <h2 id="personal-title">{personalTitle}</h2>
       </div>
-      <p>
-        Naast mijn werk ben ik graag actief, creatief en betrokken bij de mensen om me heen.
-        Die persoonlijke kant neem ik ook mee in mijn werk: laagdrempelig, eerlijk en met aandacht
-        voor wat bij jou en je organisatie past.
-      </p>
+      <p>{personalText}</p>
     </section>
 
     <section class="testimonial-section" aria-labelledby="testimonials-title">
       <div class="section-heading">
-        <p class="about-kicker">Samenwerkingen</p>
-        <h2 id="testimonials-title">Waar ik trots op ben.</h2>
-        <p>Een paar reacties van mensen en organisaties waarmee ik heb samengewerkt.</p>
+        <p class="about-kicker">{testimonialsKicker}</p>
+        <h2 id="testimonials-title">{testimonialsTitle}</h2>
+        <p>{testimonialsIntro}</p>
       </div>
 
       <div class="testimonial-grid">
@@ -158,14 +135,11 @@ const testimonials = [
 
     <section class="about-cta" id="kennismaken" aria-labelledby="about-contact-title">
       <div>
-        <p class="about-kicker">Kennismaken</p>
-        <h2 id="about-contact-title">Zullen we samen kijken wat jouw organisatie nodig heeft?</h2>
-        <p>
-          Wil je meer richting, structuur of zichtbaarheid in je marketing en communicatie?
-          Ik denk graag met je mee.
-        </p>
+        <p class="about-kicker">{ctaKicker}</p>
+        <h2 id="about-contact-title">{ctaTitle}</h2>
+        <p>{ctaText}</p>
       </div>
-      <a class="button button-primary" href={calendlyUrl}>Plan een kennismaking</a>
+      <a class="button button-primary" href={calendlyUrl}>{ctaButtonLabel}</a>
     </section>
   </main>
 </BaseLayout>

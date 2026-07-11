@@ -1,0 +1,110 @@
+{
+  "seoTitle": "Design by Sanne | Strategie, marketing en communicatie",
+  "seoDescription": "Design by Sanne helpt bedrijven met strategie, marketing en communicatie: van positionering en content tot campagnes, websites en visuele uitvoering.",
+  "ogDescription": "Meer richting, structuur en zichtbaarheid in je marketing en communicatie.",
+  "heroKicker": "strategie • marketing • communicatie",
+  "heroTitle": "Richting geven aan je verhaal.",
+  "heroIntro": "Ik help bedrijven met strategie, marketing en communicatie: van duidelijke keuzes en sterke content tot campagnes, websites en visuele middelen die kloppen met je verhaal.",
+  "heroImage": "/assets/designbysanne/sanne-hero.jpg",
+  "primaryButtonLabel": "Bekijk wat ik doe",
+  "secondaryButtonLabel": "Plan een kennismaking",
+  "statementText": "Voor organisaties die voelen dat er meer in hun marketing en communicatie zit, maar behoefte hebben aan overzicht, keuzes en iemand die het ook praktisch uitvoert.",
+  "expertiseKicker": "Waar ik je mee help",
+  "expertiseTitle": "Meer richting, structuur en herkenbaarheid.",
+  "expertiseIntro": "Ik denk mee over de lijn en help daarna met de uitvoering. Zo worden strategie, content, ontwerp en online zichtbaarheid een logisch geheel.",
+  "expertiseCards": [
+    {
+      "number": "01",
+      "title": "Strategie & positionering",
+      "text": "Heldere keuzes over doelgroep, boodschap en richting, zodat je communicatie beter aansluit op wat je wilt uitstralen."
+    },
+    {
+      "number": "02",
+      "title": "Marketing & communicatie",
+      "text": "Campagnes, contentplanning, nieuwsbrieven en social media die passen bij je doelen en doelgroep."
+    },
+    {
+      "number": "03",
+      "title": "Content, ontwerp & online uitvoering",
+      "text": "Teksten, visuals, website-aanpassingen en middelen die professioneel voelen en praktisch inzetbaar zijn."
+    }
+  ],
+  "serviceTags": [
+    "Positionering",
+    "Contentstrategie",
+    "Campagnes",
+    "Websitecommunicatie",
+    "Social media",
+    "Visuele middelen"
+  ],
+  "aboutKicker": "Over Sanne",
+  "aboutTitle": "Strategisch genoeg om richting te geven, praktisch genoeg om door te pakken.",
+  "aboutText": "Ik ben Sanne, een marketing- en communicatieprofessional die graag overzicht brengt. Ik denk mee over richting, boodschap en zichtbaarheid, en help daarna ook met de praktische uitvoering: van content en campagnes tot websites en visuele communicatie.",
+  "aboutLinkLabel": "Meer over mij",
+  "proofItems": [
+    {
+      "value": "10+",
+      "text": "jaar ervaring in marketing, communicatie en ontwerp"
+    },
+    {
+      "value": "1",
+      "text": "aanspreekpunt voor strategie, content en uitvoering"
+    },
+    {
+      "value": "3",
+      "text": "vaste pijlers: richting, structuur en zichtbaarheid"
+    }
+  ],
+  "logosKicker": "Ervaring",
+  "logosTitle": "Voor en bij organisaties zoals",
+  "clientLogos": [
+    {
+      "name": "Twinfield",
+      "image": "/assets/designbysanne/client-twinfield.png",
+      "alt": "Logo Twinfield"
+    },
+    {
+      "name": "D.A.T. Movement",
+      "image": "/assets/designbysanne/client-dat.png",
+      "alt": "Logo D.A.T. Movement"
+    },
+    {
+      "name": "SF Training Facilities",
+      "image": "/assets/designbysanne/client-sf.png",
+      "alt": "Logo SF Training Facilities"
+    },
+    {
+      "name": "TechTron",
+      "image": "/assets/designbysanne/client-techtron.jpg",
+      "alt": "Logo TechTron"
+    },
+    {
+      "name": "Provincie Gelderland",
+      "image": "/assets/designbysanne/client-provincie.png",
+      "alt": "Logo Provincie Gelderland"
+    }
+  ],
+  "workKicker": "Werkwijze",
+  "workTitle": "Rust in het proces, scherpte in de keuzes.",
+  "workSteps": [
+    {
+      "label": "Stap 1",
+      "title": "Scherp krijgen",
+      "text": "Doelen, doelgroep, boodschap en prioriteiten helder maken."
+    },
+    {
+      "label": "Stap 2",
+      "title": "Maken & uitvoeren",
+      "text": "Content, campagnes, pagina's en visuele middelen ontwikkelen."
+    },
+    {
+      "label": "Stap 3",
+      "title": "Bijsturen",
+      "text": "Kijken wat werkt en verbeteren waar de communicatie sterker kan."
+    }
+  ],
+  "ctaKicker": "Kennismaken",
+  "ctaTitle": "Twijfel je waar je moet beginnen?",
+  "ctaText": "Wil je meer richting, structuur of zichtbaarheid in je marketing en communicatie? Laten we samen kijken wat jouw organisatie nodig heeft.",
+  "ctaButtonLabel": "Plan een kennismaking"
+}

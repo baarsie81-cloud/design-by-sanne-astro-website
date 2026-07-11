@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import contactContent from "../data/contact.json";
+import siteSettings from "../data/siteSettings.json";
 
 const {
   seoTitle,
@@ -8,8 +9,6 @@ const {
   kicker,
   heroTitle,
   heroIntro,
-  emailAddress,
-  calendlyUrl,
   heroImage,
   heroImageAlt,
   statementText,
@@ -21,6 +20,8 @@ const {
   meetingCardTitle,
   meetingCardText,
 } = contactContent;
+
+const { emailAddress, calendlyUrl } = siteSettings;
 ---
 
 <BaseLayout

@@ -1,0 +1,70 @@
+{
+  "seoTitle": "Diensten | Design by Sanne",
+  "seoDescription": "Bekijk hoe Design by Sanne helpt met strategie, marketing en communicatie: van positionering en content tot campagnes, websites en visuele uitvoering.",
+  "ogDescription": "Strategie, marketing en communicatie met een duidelijke lijn en praktische uitvoering.",
+  "kicker": "Diensten",
+  "heroTitle": "Strategie, marketing en communicatie met een duidelijke lijn.",
+  "heroIntro": "Ik denk met je mee op strategisch niveau en help daarna ook met de praktische uitvoering: van positionering en contentaanpak tot campagnes, websites, social media en visuele communicatie.",
+  "heroButtonLabel": "Plan een kennismaking",
+  "heroImage": "/assets/designbysanne/diensten-hero.jpg",
+  "heroImageAlt": "Sanne van Design by Sanne aan het werk",
+  "statementText": "Voor bedrijven die meer richting, structuur en herkenbaarheid willen in hun marketing en communicatie, zonder dat het ingewikkeld of afstandelijk wordt.",
+  "overviewKicker": "Waar ik je mee help",
+  "overviewTitle": "Van keuzes maken tot zichtbaar worden.",
+  "overviewIntro": "De kracht zit in de combinatie: eerst scherp krijgen wat klopt, daarna zorgen dat het ook praktisch wordt uitgevoerd.",
+  "services": [
+    {
+      "number": "01",
+      "title": "Strategie & positionering",
+      "text": "We brengen helder in kaart waar je voor staat, wie je wilt bereiken en welke boodschap daarbij hoort.",
+      "points": ["Richting en keuzes scherp krijgen", "Doelgroep en kernboodschap bepalen", "Communicatie-aanpak en prioriteiten"]
+    },
+    {
+      "number": "02",
+      "title": "Marketing & campagnes",
+      "text": "Ik vertaal je doelen naar zichtbare marketingacties die passen bij je organisatie en doelgroep.",
+      "points": ["Contentplanning en campagnes", "E-mailmarketing en nieuwsbrieven", "Social media en online zichtbaarheid"]
+    },
+    {
+      "number": "03",
+      "title": "Communicatie & content",
+      "text": "Heldere teksten en content die beter vertellen waar je voor staat en waarom dat relevant is.",
+      "points": ["Websitecommunicatie en webteksten", "Nieuwsbrieven en klantcommunicatie", "Blogs, berichten en contentformats"]
+    },
+    {
+      "number": "04",
+      "title": "Visuele communicatie & ontwerp",
+      "text": "Communicatie wordt niet alleen duidelijk, maar ook visueel sterk en passend bij je merk.",
+      "points": ["Grafisch ontwerp en drukwerk", "Social visuals en presentaties", "Praktische merkuitingen"]
+    },
+    {
+      "number": "05",
+      "title": "Website & online beheer",
+      "text": "Je website blijft actueel, duidelijk en ondersteunend aan je marketing en communicatie.",
+      "points": ["Pagina's en content bijwerken", "Websitecommunicatie verbeteren", "Eenvoudige technische updates"]
+    }
+  ],
+  "processKicker": "Werkwijze",
+  "processTitle": "Rust in het proces, scherpte in de keuzes.",
+  "steps": [
+    {
+      "label": "Stap 1",
+      "title": "Scherp krijgen",
+      "text": "We bepalen doelen, doelgroep, boodschap en de belangrijkste keuzes."
+    },
+    {
+      "label": "Stap 2",
+      "title": "Maken & uitvoeren",
+      "text": "Ik werk content, campagnes, visuals, nieuwsbrieven of website-aanpassingen uit."
+    },
+    {
+      "label": "Stap 3",
+      "title": "Bijsturen",
+      "text": "We kijken wat werkt, wat beter kan en welke volgende stap logisch is."
+    }
+  ],
+  "ctaKicker": "Kennismaken",
+  "ctaTitle": "Wil je meer richting, structuur of zichtbaarheid?",
+  "ctaText": "Laten we samen kijken wat jouw organisatie nodig heeft en welke stap nu het meeste oplevert.",
+  "ctaButtonLabel": "Plan een kennismaking"
+}

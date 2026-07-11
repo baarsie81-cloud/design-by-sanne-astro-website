@@ -1,3 +1,9 @@
+---
+import siteSettings from "../data/siteSettings.json";
+
+const { emailAddress, instagramUrl, linkedinUrl, termsUrl } = siteSettings;
+---
+
 <footer class="footer">
   <div class="footer-main">
     <div class="footer-brand">
@@ -12,20 +18,20 @@
     </nav>
 
     <div class="footer-socials" aria-label="Sociale links">
-      <a href="https://www.instagram.com/designbysanne/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <a href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
         <svg aria-hidden="true" viewBox="0 0 24 24">
           <rect x="3" y="3" width="18" height="18" rx="5"></rect>
           <circle cx="12" cy="12" r="4"></circle>
           <circle cx="17.5" cy="6.5" r="1"></circle>
         </svg>
       </a>
-      <a href="mailto:info@designbysanne.nl" aria-label="E-mail">
+      <a href={`mailto:${emailAddress}`} aria-label="E-mail">
         <svg aria-hidden="true" viewBox="0 0 24 24">
           <path d="M4 6h16v12H4z"></path>
           <path d="m4 7 8 6 8-6"></path>
         </svg>
       </a>
-      <a href="https://www.linkedin.com/in/sannekamps/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <svg aria-hidden="true" viewBox="0 0 24 24">
           <path d="M5 9h4v10H5z"></path>
           <path d="M5 5.5h4v.1H5z"></path>
@@ -37,7 +43,7 @@
 
   <div class="footer-legal">
     <a
-      href="/assets/designbysanne/algemene-voorwaarden-design-by-sanne-1-juni-2026.pdf"
+      href={termsUrl}
       target="_blank"
       rel="noopener noreferrer"
     >

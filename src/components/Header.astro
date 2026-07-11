@@ -1,3 +1,9 @@
+---
+import siteSettings from "../data/siteSettings.json";
+
+const { calendlyUrl } = siteSettings;
+---
+
 <header class="site-header" aria-label="Hoofdnavigatie">
   <a class="brand" href="/" aria-label="Design by Sanne home">
     <img src="/assets/designbysanne/logo-dbs-white.png" alt="Design by Sanne - strategie marketing communicatie" />
@@ -7,7 +13,7 @@
     <a href="/over-mij/">Over mij</a>
     <a href="/contact/">Contact</a>
   </nav>
-  <a class="header-cta" href="#kennismaken">Kennismaken</a>
+  <a class="header-cta" href={calendlyUrl}>Kennismaken</a>
   <details class="mobile-menu">
     <summary aria-label="Menu openen">
       <span class="mobile-menu-icon" aria-hidden="true">
@@ -22,7 +28,7 @@
       <a href="/diensten/">Diensten</a>
       <a href="/over-mij/">Over mij</a>
       <a href="/contact/">Contact</a>
-      <a href="#kennismaken">Kennismaken</a>
+      <a href={calendlyUrl}>Kennismaken</a>
     </nav>
   </details>
 </header>

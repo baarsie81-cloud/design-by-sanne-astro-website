@@ -1,0 +1,69 @@
+{
+  "seoTitle": "Over mij | Design by Sanne",
+  "seoDescription": "Maak kennis met Sanne: marketing- en communicatieprofessional die bedrijven helpt met strategie, content, campagnes, websites en visuele uitvoering.",
+  "ogDescription": "Maak kennis met Sanne, marketing- en communicatieprofessional met oog voor strategie en uitvoering.",
+  "kicker": "Over Sanne",
+  "heroTitleStart": "Marketing- en",
+  "heroTitleEmphasis": "communicatieprofessional",
+  "heroTitleEnd": "met oog voor strategie én uitvoering.",
+  "heroIntro": "Ik ben Sanne. Ik help bedrijven om meer richting, structuur en zichtbaarheid te brengen in hun marketing en communicatie. Ik denk mee over strategie, boodschap en content, en help daarna ook met de praktische uitvoering.",
+  "heroButtonLabel": "Plan een kennismaking",
+  "heroImage": "/assets/designbysanne/over-mij-sanne.jpg",
+  "heroImageAlt": "Sanne van Design by Sanne",
+  "statementText": "Ik combineer creativiteit, overzicht en doorpakken: niet alleen bedenken wat goed zou zijn, maar het ook helder en praktisch realiseren.",
+  "storyKicker": "Van ontwerp naar bredere marketingpartner",
+  "storyTitle": "Design by Sanne groeide mee met de vragen van organisaties.",
+  "storyText": "Design by Sanne begon vanuit hands-on ontwerpen en praktische ondersteuning. Inmiddels is mijn rol breder geworden: ik help organisaties met positionering, marketing, communicatie, content, campagnes, websites en visuele middelen die samen één duidelijke lijn vormen.",
+  "proofItems": [
+    {"title": "Richting", "text": "heldere keuzes en een verhaal dat klopt"},
+    {"title": "Structuur", "text": "overzicht in plannen, content en communicatiekanalen"},
+    {"title": "Zichtbaarheid", "text": "middelen die professioneel voelen en praktisch werken"}
+  ],
+  "strengthsKicker": "Wat je aan mij hebt",
+  "strengthsTitle": "Meedenken op hoofdlijnen én helpen uitvoeren.",
+  "strengthsIntro": "Ik werk graag dicht op de inhoud: eerst scherp krijgen wat nodig is, daarna zorgen dat de juiste middelen ook echt gemaakt worden.",
+  "strengths": [
+    {
+      "number": "01",
+      "title": "Strategisch meedenken",
+      "text": "Ik help richting, doelgroep, boodschap en keuzes scherp te krijgen, zodat marketing en communicatie meer samenhang krijgen."
+    },
+    {
+      "number": "02",
+      "title": "Praktisch uitvoeren",
+      "text": "Van content en campagnes tot website-aanpassingen, nieuwsbrieven, social media en visuele middelen: ideeën worden concreet."
+    },
+    {
+      "number": "03",
+      "title": "Rust en structuur",
+      "text": "Ik breng overzicht in losse ideeën, acties en communicatiekanalen, zodat duidelijk wordt wat prioriteit heeft."
+    }
+  ],
+  "personalKicker": "Ook Sanne",
+  "personalTitle": "Betrokken, eerlijk en graag praktisch bezig.",
+  "personalText": "Naast mijn werk ben ik graag actief, creatief en betrokken bij de mensen om me heen. Die persoonlijke kant neem ik ook mee in mijn werk: laagdrempelig, eerlijk en met aandacht voor wat bij jou en je organisatie past.",
+  "testimonialsKicker": "Samenwerkingen",
+  "testimonialsTitle": "Waar ik trots op ben.",
+  "testimonialsIntro": "Een paar reacties van mensen en organisaties waarmee ik heb samengewerkt.",
+  "testimonials": [
+    {
+      "quote": "Sanne maakte een vlotte vertaling van mijn ideeën naar een bruikbare flyer. Goed, betaalbaar en vlot!",
+      "name": "Wim Flier",
+      "company": "Flier Fietsen"
+    },
+    {
+      "quote": "Ze vertaalt mijn ideeën naar concrete, klantvriendelijke voorstellen. Dankzij haar is alles soepeler en efficiënter.",
+      "name": "Jan Bloem",
+      "company": "D.A.T. Movement"
+    },
+    {
+      "quote": "Ze is professioneel, komt afspraken na en is breed inzetbaar. Betrouwbaarheid staat bij haar voorop.",
+      "name": "Jan Willem Rolfers",
+      "company": "SF Training Facilities"
+    }
+  ],
+  "ctaKicker": "Kennismaken",
+  "ctaTitle": "Zullen we samen kijken wat jouw organisatie nodig heeft?",
+  "ctaText": "Wil je meer richting, structuur of zichtbaarheid in je marketing en communicatie? Ik denk graag met je mee.",
+  "ctaButtonLabel": "Plan een kennismaking"
+}

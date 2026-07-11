@@ -1,83 +1,74 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import homeContent from "../data/home.json";
 
-const clientLogos = [
-  { name: "Twinfield", src: "/assets/designbysanne/client-twinfield.png" },
-  { name: "D.A.T. Movement", src: "/assets/designbysanne/client-dat.png" },
-  { name: "SF Training Facilities", src: "/assets/designbysanne/client-sf.png" },
-  { name: "TechTron", src: "/assets/designbysanne/client-techtron.jpg" },
-  { name: "Provincie Gelderland", src: "/assets/designbysanne/client-provincie.png" },
-];
-
-const expertiseCards = [
-  {
-    number: "01",
-    title: "Strategie & positionering",
-    text: "Heldere keuzes over doelgroep, boodschap en richting, zodat je communicatie beter aansluit op wat je wilt uitstralen.",
-  },
-  {
-    number: "02",
-    title: "Marketing & communicatie",
-    text: "Campagnes, contentplanning, nieuwsbrieven en social media die passen bij je doelen en doelgroep.",
-  },
-  {
-    number: "03",
-    title: "Content, ontwerp & online uitvoering",
-    text: "Teksten, visuals, website-aanpassingen en middelen die professioneel voelen en praktisch inzetbaar zijn.",
-  },
-];
-
-const serviceTags = [
-  "Positionering",
-  "Contentstrategie",
-  "Campagnes",
-  "Websitecommunicatie",
-  "Social media",
-  "Visuele middelen",
-];
+const {
+  seoTitle,
+  seoDescription,
+  ogDescription,
+  heroKicker,
+  heroTitle,
+  heroIntro,
+  heroImage,
+  primaryButtonLabel,
+  secondaryButtonLabel,
+  statementText,
+  expertiseKicker,
+  expertiseTitle,
+  expertiseIntro,
+  expertiseCards,
+  serviceTags,
+  aboutKicker,
+  aboutTitle,
+  aboutText,
+  aboutLinkLabel,
+  proofItems,
+  logosKicker,
+  logosTitle,
+  clientLogos,
+  workKicker,
+  workTitle,
+  workSteps,
+  ctaKicker,
+  ctaTitle,
+  ctaText,
+  ctaButtonLabel,
+} = homeContent;
 ---
 
 <BaseLayout
-  title="Design by Sanne | Strategie, marketing en communicatie"
-  description="Design by Sanne helpt bedrijven met strategie, marketing en communicatie: van positionering en content tot campagnes, websites en visuele uitvoering."
+  title={seoTitle}
+  description={seoDescription}
   canonical="https://designbysanne.nl/"
-  ogDescription="Meer richting, structuur en zichtbaarheid in je marketing en communicatie."
+  ogDescription={ogDescription}
+  ogImage={heroImage}
 >
   <main>
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true"></div>
+        <div class="hero-media" style={`--hero-image: url('${heroImage}')`} aria-hidden="true"></div>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="eyebrow">strategie &bull; marketing &bull; communicatie</p>
-          <h1 id="hero-title">Richting geven aan je verhaal.</h1>
-          <p class="hero-lead">
-            Ik help bedrijven met strategie, marketing en communicatie: van duidelijke keuzes
-            en sterke content tot campagnes, websites en visuele middelen die kloppen met je verhaal.
-          </p>
+          <p class="eyebrow">{heroKicker}</p>
+          <h1 id="hero-title">{heroTitle}</h1>
+          <p class="hero-lead">{heroIntro}</p>
           <div class="hero-actions" aria-label="Belangrijkste acties">
-            <a class="button button-primary" href="#expertise">Bekijk wat ik doe</a>
-            <a class="button button-secondary" href="#kennismaken">Plan een kennismaking</a>
+            <a class="button button-primary" href="#expertise">{primaryButtonLabel}</a>
+            <a class="button button-secondary" href="#kennismaken">{secondaryButtonLabel}</a>
           </div>
         </div>
       </section>
 
       <section class="statement" aria-label="Korte positionering">
         <div class="statement-inner">
-          <p>
-            Voor organisaties die voelen dat er meer in hun marketing en communicatie zit,
-            maar behoefte hebben aan overzicht, keuzes en iemand die het ook praktisch uitvoert.
-          </p>
+          <p>{statementText}</p>
         </div>
       </section>
 
       <section class="section section-light" id="expertise" aria-labelledby="expertise-title">
         <div class="section-heading">
-          <p class="section-kicker">Waar ik je mee help</p>
-          <h2 id="expertise-title">Meer richting, structuur en herkenbaarheid.</h2>
-          <p>
-            Ik denk mee over de lijn en help daarna met de uitvoering. Zo worden strategie,
-            content, ontwerp en online zichtbaarheid een logisch geheel.
-          </p>
+          <p class="section-kicker">{expertiseKicker}</p>
+          <h2 id="expertise-title">{expertiseTitle}</h2>
+          <p>{expertiseIntro}</p>
         </div>
 
         <div class="expertise-grid">
@@ -99,41 +90,31 @@ const serviceTags = [
 
       <section class="section section-split" aria-labelledby="about-title">
         <div class="split-copy">
-          <p class="section-kicker">Over Sanne</p>
-          <h2 id="about-title">Strategisch genoeg om richting te geven, praktisch genoeg om door te pakken.</h2>
-          <p>
-            Ik ben Sanne, een marketing- en communicatieprofessional die graag overzicht brengt.
-            Ik denk mee over richting, boodschap en zichtbaarheid, en help daarna ook met de praktische
-            uitvoering: van content en campagnes tot websites en visuele communicatie.
-          </p>
-          <a class="text-link" href="/over-mij/">Meer over mij</a>
+          <p class="section-kicker">{aboutKicker}</p>
+          <h2 id="about-title">{aboutTitle}</h2>
+          <p>{aboutText}</p>
+          <a class="text-link" href="/over-mij/">{aboutLinkLabel}</a>
         </div>
         <div class="proof-panel" aria-label="Waarom samenwerken">
-          <div>
-            <strong>10+</strong>
-            <span>jaar ervaring in marketing, communicatie en ontwerp</span>
-          </div>
-          <div>
-            <strong>1</strong>
-            <span>aanspreekpunt voor strategie, content en uitvoering</span>
-          </div>
-          <div>
-            <strong>3</strong>
-            <span>vaste pijlers: richting, structuur en zichtbaarheid</span>
-          </div>
+          {proofItems.map((item) => (
+            <div>
+              <strong>{item.value}</strong>
+              <span>{item.text}</span>
+            </div>
+          ))}
         </div>
       </section>
 
       <section class="logo-section" aria-labelledby="logos-title">
         <div class="logo-heading">
-          <p class="section-kicker">Ervaring</p>
-          <h2 id="logos-title">Voor en bij organisaties zoals</h2>
+          <p class="section-kicker">{logosKicker}</p>
+          <h2 id="logos-title">{logosTitle}</h2>
         </div>
         <div class="logo-strip">
           {
             clientLogos.map((logo) => (
               <div class="logo-tile">
-                <img src={logo.src} alt={`Logo ${logo.name}`} loading="lazy" />
+                <img src={logo.image} alt={logo.alt} loading="lazy" />
               </div>
             ))
           }
@@ -142,38 +123,27 @@ const serviceTags = [
 
       <section class="section section-dark" aria-labelledby="work-title">
         <div class="section-heading section-heading-dark">
-          <p class="section-kicker">Werkwijze</p>
-          <h2 id="work-title">Rust in het proces, scherpte in de keuzes.</h2>
+          <p class="section-kicker">{workKicker}</p>
+          <h2 id="work-title">{workTitle}</h2>
         </div>
         <div class="work-steps">
-          <article>
-            <span>Stap 1</span>
-            <h3>Scherp krijgen</h3>
-            <p>Doelen, doelgroep, boodschap en prioriteiten helder maken.</p>
-          </article>
-          <article>
-            <span>Stap 2</span>
-            <h3>Maken & uitvoeren</h3>
-            <p>Content, campagnes, pagina's en visuele middelen ontwikkelen.</p>
-          </article>
-          <article>
-            <span>Stap 3</span>
-            <h3>Bijsturen</h3>
-            <p>Kijken wat werkt en verbeteren waar de communicatie sterker kan.</p>
-          </article>
+          {workSteps.map((step) => (
+            <article>
+              <span>{step.label}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <section class="final-cta" id="kennismaken" aria-labelledby="contact-title">
         <div>
-          <p class="section-kicker">Kennismaken</p>
-          <h2 id="contact-title">Twijfel je waar je moet beginnen?</h2>
-          <p>
-            Wil je meer richting, structuur of zichtbaarheid in je marketing en communicatie?
-            Laten we samen kijken wat jouw organisatie nodig heeft.
-          </p>
+          <p class="section-kicker">{ctaKicker}</p>
+          <h2 id="contact-title">{ctaTitle}</h2>
+          <p>{ctaText}</p>
         </div>
-        <a class="button button-primary" href="/contact/">Plan een kennismaking</a>
+        <a class="button button-primary" href="/contact/">{ctaButtonLabel}</a>
       </section>
   </main>
 </BaseLayout>
@@ -275,7 +245,7 @@ const serviceTags = [
     position: absolute;
     inset: 0;
     z-index: -3;
-    background-image: url("/assets/designbysanne/sanne-hero.jpg");
+    background-image: var(--hero-image);
     background-size: cover;
     background-position: center 28%;
     transform: scale(1.02);
