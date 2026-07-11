@@ -2,10 +2,10 @@
   "seoTitle": "Design by Sanne | Strategie, marketing en communicatie",
   "seoDescription": "Design by Sanne helpt bedrijven met strategie, marketing en communicatie: van positionering en content tot campagnes, websites en visuele uitvoering.",
   "ogDescription": "Meer richting, structuur en zichtbaarheid in je marketing en communicatie.",
-  "heroKicker": "strategie • marketing • communicatie",
+  "heroKicker": "strategie • marketing • test",
   "heroTitle": "Richting geven aan je verhaal.",
   "heroIntro": "Ik help bedrijven met strategie, marketing en communicatie: van duidelijke keuzes en sterke content tot campagnes, websites en visuele middelen die kloppen met je verhaal.",
-  "heroImage": "/assets/designbysanne/sanne-hero.jpg",
+  "heroImage": "/assets/designbysanne/heroImage.jpg",
   "primaryButtonLabel": "Bekijk wat ik doe",
   "secondaryButtonLabel": "Plan een kennismaking",
   "statementText": "Voor organisaties die voelen dat er meer in hun marketing en communicatie zit, maar behoefte hebben aan overzicht, keuzes en iemand die het ook praktisch uitvoert.",
@@ -60,27 +60,27 @@
   "clientLogos": [
     {
       "name": "Twinfield",
-      "image": "/assets/designbysanne/client-twinfield.png",
+      "image": "/assets/designbysanne/clientLogos/0/image.png",
       "alt": "Logo Twinfield"
     },
     {
       "name": "D.A.T. Movement",
-      "image": "/assets/designbysanne/client-dat.png",
+      "image": "/assets/designbysanne/clientLogos/1/image.png",
       "alt": "Logo D.A.T. Movement"
     },
     {
       "name": "SF Training Facilities",
-      "image": "/assets/designbysanne/client-sf.png",
+      "image": "/assets/designbysanne/clientLogos/2/image.png",
       "alt": "Logo SF Training Facilities"
     },
     {
       "name": "TechTron",
-      "image": "/assets/designbysanne/client-techtron.jpg",
+      "image": "/assets/designbysanne/clientLogos/3/image.jpg",
       "alt": "Logo TechTron"
     },
     {
       "name": "Provincie Gelderland",
-      "image": "/assets/designbysanne/client-provincie.png",
+      "image": "/assets/designbysanne/clientLogos/4/image.png",
       "alt": "Logo Provincie Gelderland"
     }
   ],
