@@ -7,16 +7,14 @@ const projects = [
     image: "/assets/designbysanne/project-visuals/life-line-trainingen-website.webp",
     alt: "Homepage van de website van Life Line Trainingen",
     href: "/websites/",
-    temporary: false,
   },
   {
-    label: "Marketing & communicatie",
-    title: "Middelen die herkenbaar vertellen waar je voor staat.",
+    label: "Marketing & strategie",
+    title: "Van richting naar campagne",
     text: "Van campagne en content tot visuele communicatie die past bij je organisatie en doelgroep.",
-    image: "/assets/designbysanne/project-visuals/communicatie-voorbeeld.svg",
-    alt: "Tijdelijke voorbeeldvisual van marketing- en communicatiemiddelen",
+    image: "/assets/designbysanne/project-visuals/marketing-strategie-stock.webp",
+    alt: "Overlegtafel met laptops, analyses en campagneplanning",
     href: "/diensten/",
-    temporary: true,
   },
   {
     label: "Digitale oplossing",
@@ -25,7 +23,6 @@ const projects = [
     image: "/assets/designbysanne/project-visuals/verlof-overuren-dashboard.webp",
     alt: "Dashboard voor verlof, ziekte, overuren en medewerkersbeheer",
     href: "/digitale-oplossingen/",
-    temporary: false,
   },
 ];
 ---
@@ -40,11 +37,10 @@ const projects = [
   <div class="showcase-grid">
     {
       projects.map((project, index) => (
-        <article class:list={["showcase-card", index === 0 && "showcase-card-wide", project.temporary && "showcase-card-temporary"]}>
+        <article class:list={["showcase-card", index === 0 && "showcase-card-wide"]}>
           <a href={project.href} aria-label={`${project.title} Meer bekijken`}>
             <figure>
               <img src={project.image} alt={project.alt} loading={index === 0 ? "eager" : "lazy"} />
-              {project.temporary && <figcaption>Tijdelijke voorbeeldvisual</figcaption>}
             </figure>
             <div class="showcase-copy">
               <span>{project.label}</span>
@@ -58,7 +54,6 @@ const projects = [
     }
   </div>
 
-  <p class="showcase-note">De marketingvisual is tijdelijk en wordt later vervangen door een eigen projectbeeld.</p>
 </section>
 
 <style>
@@ -149,22 +144,6 @@ const projects = [
     transition: transform 240ms ease;
   }
 
-  .showcase-card-temporary a:hover img {
-    transform: scale(1.025);
-  }
-
-  .showcase-card figcaption {
-    position: absolute;
-    left: 16px;
-    bottom: 16px;
-    padding: 7px 10px;
-    border-radius: 999px;
-    background: rgba(24, 32, 37, 0.88);
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 800;
-  }
-
   .showcase-copy {
     display: flex;
     flex-direction: column;
@@ -196,15 +175,6 @@ const projects = [
   .showcase-copy strong {
     margin-top: auto;
     color: #627727;
-  }
-
-  .showcase-note {
-    width: min(1120px, 100%);
-    margin: 18px auto 0;
-    color: #70787c;
-    font-size: 13px;
-    line-height: 1.5;
-    text-align: center;
   }
 
   @media (max-width: 860px) {
