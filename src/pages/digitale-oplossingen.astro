@@ -1,0 +1,69 @@
+---
+import PropositionPage from "../components/PropositionPage.astro";
+
+const capabilities = [
+  {
+    number: "01",
+    title: "Dashboards & rapportages",
+    text: "Belangrijke informatie overzichtelijk bij elkaar, zodat je sneller ziet wat aandacht nodig heeft.",
+    points: ["Actuele overzichten", "Heldere rapportages", "Informatie passend bij de gebruiker"],
+  },
+  {
+    number: "02",
+    title: "Portalen",
+    text: "Een centrale, afgeschermde plek waar klanten of medewerkers informatie kunnen vinden en regelen.",
+    points: ["Klant- en medewerkersportalen", "Persoonlijke toegang", "Documenten en acties op één plek"],
+  },
+  {
+    number: "03",
+    title: "Formulieren & registraties",
+    text: "Papieren of versnipperde processen omzetten naar een duidelijke digitale werkwijze.",
+    points: ["Digitale formulieren", "Uren-, verlof- of aanvraagregistratie", "Minder dubbel invoerwerk"],
+  },
+  {
+    number: "04",
+    title: "Workflows & automatisering",
+    text: "Terugkerende stappen logisch aan elkaar koppelen, zodat werk niet onnodig blijft liggen.",
+    points: ["Meldingen en opvolging", "Vaste processtappen", "Praktische koppelingen"],
+  },
+];
+
+const steps = [
+  { label: "Stap 1", title: "Proces begrijpen", text: "We brengen in kaart wat er nu gebeurt, waar tijd verloren gaat en wie de oplossing gebruikt." },
+  { label: "Stap 2", title: "Eenvoudig maken", text: "Ik vertaal het proces naar een overzichtelijke oplossing met alleen de functies die echt nodig zijn." },
+  { label: "Stap 3", title: "Testen & verbeteren", text: "De oplossing wordt in de praktijk gecontroleerd en gericht aangescherpt voordat zij breder wordt gebruikt." },
+];
+---
+
+<PropositionPage
+  seoTitle="Digitale oplossingen op maat | Design by Sanne"
+  seoDescription="Design by Sanne maakt dashboards, portalen, digitale formulieren en workflows die bedrijfsprocessen overzichtelijker en slimmer maken."
+  canonical="https://designbysanne.nl/digitale-oplossingen/"
+  kicker="Digitale oplossingen"
+  heroTitle="Minder losse handelingen. Meer overzicht in je bedrijf."
+  heroIntro="Ik help je om onhandige, tijdrovende processen te vertalen naar een digitale oplossing die begrijpelijk werkt voor de mensen die ermee aan de slag gaan."
+  heroImage="/assets/designbysanne/project-visuals/verlof-overuren-dashboard.webp"
+  heroImageAlt="Dashboard voor verlof, ziekte, overuren en medewerkersbeheer"
+  projectCaption="Digitale oplossing · Verlof- en overurendashboard"
+  heroButtonLabel="Bespreek je vraag"
+  statementText="Geen techniek om de techniek, maar een praktische oplossing voor werk dat nu onnodig veel tijd, handelingen of afstemming kost."
+  introKicker="Slimmer van binnen"
+  introTitle="Begin bij het proces, niet bij de software."
+  introText="Niet ieder probleem vraagt om een groot systeem. Soms is een helder dashboard, digitaal formulier of eenvoudig portaal precies genoeg. Ik kijk eerst naar de dagelijkse praktijk en bepaal daarna welke oplossing waarde toevoegt."
+  introPoints={["Minder handmatig en dubbel werk", "Informatie overzichtelijk op één plek", "Een eenvoudige ervaring voor medewerkers of klanten", "Maatwerk zonder onnodige functies"]}
+  capabilityKicker="Wat er mogelijk is"
+  capabilityTitle="Digitale hulpmiddelen die passen bij je werkproces."
+  capabilityIntro="De oplossing wordt afgestemd op de mensen die ermee werken en op de informatie die zij echt nodig hebben."
+  capabilities={capabilities}
+  visualKicker="Digitale oplossing"
+  visualTitle="Verlof- en overurendashboard"
+  visualText="De projectvisual toont een dashboard voor verlofbeheer, met overzichten voor medewerkers, aanvragen, ziekte, jaarsaldi, agenda en export."
+  processKicker="Werkwijze"
+  processTitle="Van praktisch knelpunt naar werkende oplossing."
+  steps={steps}
+  trustKicker="Begrijpelijke techniek"
+  trustTitle="Duidelijk voor jou én voor de gebruiker."
+  trustText="Sanne blijft je vaste aanspreekpunt en bewaakt dat de oplossing logisch, herkenbaar en gebruiksvriendelijk blijft. Technische keuzes worden uitgelegd vanuit wat ze in de praktijk opleveren."
+  ctaTitle="Loop je steeds tegen hetzelfde proces aan?"
+  ctaText="Vertel wat nu veel tijd of afstemming kost. Dan kijk ik graag of een eenvoudige digitale oplossing daarbij kan helpen."
+/>

@@ -1,0 +1,600 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import siteSettings from "../data/siteSettings.json";
+
+interface Capability {
+  number: string;
+  title: string;
+  text: string;
+  points: string[];
+}
+
+interface Step {
+  label: string;
+  title: string;
+  text: string;
+}
+
+interface Props {
+  seoTitle: string;
+  seoDescription: string;
+  canonical: string;
+  kicker: string;
+  heroTitle: string;
+  heroIntro: string;
+  heroImage: string;
+  heroImageAlt: string;
+  projectCaption: string;
+  heroButtonLabel: string;
+  statementText: string;
+  introKicker: string;
+  introTitle: string;
+  introText: string;
+  introPoints: string[];
+  capabilityKicker: string;
+  capabilityTitle: string;
+  capabilityIntro: string;
+  capabilities: Capability[];
+  visualKicker: string;
+  visualTitle: string;
+  visualText: string;
+  processKicker: string;
+  processTitle: string;
+  steps: Step[];
+  trustKicker: string;
+  trustTitle: string;
+  trustText: string;
+  ctaTitle: string;
+  ctaText: string;
+}
+
+const {
+  seoTitle,
+  seoDescription,
+  canonical,
+  kicker,
+  heroTitle,
+  heroIntro,
+  heroImage,
+  heroImageAlt,
+  projectCaption,
+  heroButtonLabel,
+  statementText,
+  introKicker,
+  introTitle,
+  introText,
+  introPoints,
+  capabilityKicker,
+  capabilityTitle,
+  capabilityIntro,
+  capabilities,
+  visualKicker,
+  visualTitle,
+  visualText,
+  processKicker,
+  processTitle,
+  steps,
+  trustKicker,
+  trustTitle,
+  trustText,
+  ctaTitle,
+  ctaText,
+} = Astro.props;
+
+const { calendlyUrl } = siteSettings;
+---
+
+<BaseLayout
+  title={seoTitle}
+  description={seoDescription}
+  canonical={canonical}
+  ogTitle={seoTitle}
+  ogDescription={seoDescription}
+  ogImage={heroImage}
+>
+  <main>
+    <section class="proposition-hero" aria-labelledby="proposition-title">
+      <div class="proposition-hero-inner">
+        <div class="proposition-hero-copy">
+          <p class="proposition-kicker">{kicker}</p>
+          <h1 id="proposition-title">{heroTitle}</h1>
+          <p>{heroIntro}</p>
+          <a class="button button-primary" href={calendlyUrl}>{heroButtonLabel}</a>
+        </div>
+        <figure class="proposition-hero-visual">
+          <img src={heroImage} alt={heroImageAlt} />
+          <figcaption>{projectCaption}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="proposition-statement" aria-label="Korte positionering">
+      <p>{statementText}</p>
+    </section>
+
+    <section class="proposition-intro" aria-labelledby="intro-title">
+      <div class="proposition-intro-copy">
+        <p class="proposition-kicker">{introKicker}</p>
+        <h2 id="intro-title">{introTitle}</h2>
+        <p>{introText}</p>
+      </div>
+      <ul>
+        {introPoints.map((point) => <li>{point}</li>)}
+      </ul>
+    </section>
+
+    <section class="capability-section" aria-labelledby="capability-title">
+      <div class="section-heading">
+        <p class="proposition-kicker">{capabilityKicker}</p>
+        <h2 id="capability-title">{capabilityTitle}</h2>
+        <p>{capabilityIntro}</p>
+      </div>
+      <div class="capability-grid">
+        {
+          capabilities.map((capability) => (
+            <article class="capability-card">
+              <span>{capability.number}</span>
+              <h3>{capability.title}</h3>
+              <p>{capability.text}</p>
+              <ul>
+                {capability.points.map((point) => <li>{point}</li>)}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="visual-proof" aria-labelledby="visual-title">
+      <figure>
+        <img src={heroImage} alt={heroImageAlt} loading="lazy" />
+        <figcaption>{projectCaption}</figcaption>
+      </figure>
+      <div>
+        <p class="proposition-kicker">{visualKicker}</p>
+        <h2 id="visual-title">{visualTitle}</h2>
+        <p>{visualText}</p>
+      </div>
+    </section>
+
+    <section class="process-section" aria-labelledby="process-title">
+      <div class="section-heading section-heading-dark">
+        <p class="proposition-kicker">{processKicker}</p>
+        <h2 id="process-title">{processTitle}</h2>
+      </div>
+      <div class="process-grid">
+        {
+          steps.map((step) => (
+            <article>
+              <span>{step.label}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="trust-section" aria-labelledby="trust-title">
+      <p class="proposition-kicker">{trustKicker}</p>
+      <h2 id="trust-title">{trustTitle}</h2>
+      <p>{trustText}</p>
+    </section>
+
+    <section class="proposition-cta" aria-labelledby="cta-title">
+      <div>
+        <p class="proposition-kicker">Kennismaken</p>
+        <h2 id="cta-title">{ctaTitle}</h2>
+        <p>{ctaText}</p>
+      </div>
+      <a class="button button-primary" href="/contact/">Neem contact op</a>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .proposition-hero {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    padding: 190px 24px 82px;
+    background:
+      linear-gradient(90deg, rgba(32, 40, 47, 0.98), rgba(32, 40, 47, 0.8)),
+      radial-gradient(circle at 82% 24%, rgba(220, 163, 38, 0.28), transparent 34%),
+      #20282f;
+    color: #ffffff;
+  }
+
+  .proposition-hero-inner {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.18fr);
+    gap: 48px;
+    align-items: center;
+  }
+
+  .proposition-kicker {
+    margin: 0 0 14px;
+    color: #dca326;
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .proposition-hero h1 {
+    margin-bottom: 24px;
+    font-size: 58px;
+    line-height: 1;
+    font-weight: 900;
+  }
+
+  .proposition-hero-copy > p:not(.proposition-kicker) {
+    margin-bottom: 34px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 21px;
+    line-height: 1.55;
+  }
+
+  .proposition-hero-visual {
+    position: relative;
+    margin: 0;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+  }
+
+  .proposition-hero-visual img,
+  .visual-proof img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .proposition-hero-visual figcaption {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(24, 32, 37, 0.88);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .proposition-statement {
+    background: #627727;
+    color: #ffffff;
+  }
+
+  .proposition-statement p {
+    width: min(1060px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 34px 0;
+    font-size: 26px;
+    line-height: 1.42;
+    font-weight: 800;
+  }
+
+  .proposition-intro,
+  .visual-proof {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 94px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.78fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  .proposition-intro h2,
+  .section-heading h2,
+  .visual-proof h2,
+  .trust-section h2,
+  .proposition-cta h2 {
+    margin: 0 0 18px;
+    color: #1f2a2f;
+    font-size: 46px;
+    line-height: 1.08;
+    font-weight: 900;
+  }
+
+  .proposition-intro-copy > p:not(.proposition-kicker),
+  .section-heading > p:not(.proposition-kicker),
+  .visual-proof div > p:not(.proposition-kicker),
+  .trust-section > p:not(.proposition-kicker),
+  .proposition-cta div > p:not(.proposition-kicker) {
+    color: #586167;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .proposition-intro > ul {
+    display: grid;
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(32, 40, 47, 0.14);
+    box-shadow: 0 18px 40px rgba(32, 40, 47, 0.08);
+    list-style: none;
+  }
+
+  .proposition-intro > ul li {
+    position: relative;
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    padding: 20px 24px 20px 58px;
+    background: #ffffff;
+    color: #20282f;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .proposition-intro > ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 24px;
+    color: #627727;
+    font-size: 19px;
+    font-weight: 900;
+  }
+
+  .capability-section {
+    padding: 94px 24px;
+    background: #f5f4ef;
+  }
+
+  .section-heading {
+    width: min(860px, 100%);
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .capability-grid {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .capability-card {
+    min-height: 340px;
+    padding: 28px;
+    border: 1px solid rgba(32, 40, 47, 0.12);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(32, 40, 47, 0.08);
+  }
+
+  .capability-card > span {
+    display: block;
+    margin-bottom: 42px;
+    color: #9a4d42;
+    font-size: 18px;
+    font-weight: 900;
+  }
+
+  .capability-card h3 {
+    margin: 0 0 14px;
+    color: #627727;
+    font-size: 27px;
+    line-height: 1.18;
+  }
+
+  .capability-card p,
+  .capability-card li {
+    color: #586167;
+    line-height: 1.62;
+  }
+
+  .capability-card p {
+    margin-bottom: 18px;
+  }
+
+  .capability-card ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .capability-card li + li {
+    margin-top: 7px;
+  }
+
+  .visual-proof {
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+  }
+
+  .visual-proof figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #20282f;
+    box-shadow: 0 24px 60px rgba(32, 40, 47, 0.14);
+  }
+
+  .visual-proof img {
+    aspect-ratio: 2 / 1;
+  }
+
+  .visual-proof figcaption {
+    padding: 12px 16px;
+    background: #f5f4ef;
+    color: #70787c;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .process-section {
+    padding: 94px 24px;
+    background: #20282f;
+    color: #ffffff;
+  }
+
+  .section-heading-dark h2 {
+    color: #ffffff;
+  }
+
+  .process-grid {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .process-grid article {
+    min-height: 238px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .process-grid span {
+    display: block;
+    margin-bottom: 48px;
+    color: #dca326;
+    font-weight: 900;
+  }
+
+  .process-grid h3 {
+    margin: 0 0 12px;
+    font-size: 25px;
+  }
+
+  .process-grid p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.76);
+    line-height: 1.62;
+  }
+
+  .trust-section {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 86px 24px;
+    text-align: center;
+  }
+
+  .proposition-cta {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 86px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 36px;
+    align-items: center;
+    border-top: 1px solid rgba(32, 40, 47, 0.12);
+  }
+
+  .proposition-cta div > p:not(.proposition-kicker) {
+    max-width: 720px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .proposition-hero-inner,
+    .proposition-intro,
+    .visual-proof,
+    .proposition-cta {
+      grid-template-columns: 1fr;
+    }
+
+    .proposition-hero-visual {
+      max-width: 680px;
+    }
+
+    .proposition-hero h1 {
+      max-width: 760px;
+      font-size: 52px;
+    }
+
+    .capability-grid,
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .proposition-intro h2,
+    .section-heading h2,
+    .visual-proof h2,
+    .trust-section h2,
+    .proposition-cta h2 {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .proposition-hero {
+      min-height: 0;
+      padding: 164px 18px 58px;
+    }
+
+    .proposition-hero-inner {
+      gap: 34px;
+    }
+
+    .proposition-hero h1 {
+      font-size: 40px;
+      line-height: 1.04;
+    }
+
+    .proposition-hero-copy > p:not(.proposition-kicker),
+    .proposition-statement p {
+      font-size: 18px;
+    }
+
+    .proposition-statement p,
+    .proposition-intro,
+    .visual-proof,
+    .proposition-cta {
+      width: min(100% - 36px, 1120px);
+    }
+
+    .proposition-intro,
+    .visual-proof {
+      padding: 68px 0;
+      gap: 34px;
+    }
+
+    .capability-section,
+    .process-section {
+      padding: 68px 18px;
+    }
+
+    .proposition-intro h2,
+    .section-heading h2,
+    .visual-proof h2,
+    .trust-section h2,
+    .proposition-cta h2 {
+      font-size: 31px;
+      line-height: 1.14;
+    }
+
+    .capability-card,
+    .process-grid article {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    .capability-card > span,
+    .process-grid span {
+      margin-bottom: 34px;
+    }
+
+    .trust-section {
+      padding: 68px 18px;
+    }
+
+    .proposition-cta {
+      padding: 68px 0;
+    }
+  }
+</style>

@@ -1,10 +1,10 @@
 {
   "seoTitle": "Diensten | Design by Sanne",
-  "seoDescription": "Bekijk hoe Design by Sanne helpt met strategie, marketing en communicatie: van positionering en content tot campagnes, websites en visuele uitvoering.",
+  "seoDescription": "Bekijk hoe Design by Sanne helpt met strategie, marketing, communicatie, content en vormgeving.",
   "ogDescription": "Strategie, marketing en communicatie met een duidelijke lijn en praktische uitvoering.",
   "kicker": "Diensten",
   "heroTitle": "Strategie, marketing en communicatie met een duidelijke lijn.",
-  "heroIntro": "Ik denk met je mee op strategisch niveau en help daarna ook met de praktische uitvoering: van positionering en contentaanpak tot campagnes, websites, social media en visuele communicatie.",
+  "heroIntro": "Ik denk met je mee over richting, doelgroep en boodschap en help daarna ook met de praktische uitvoering: van content en campagnes tot social media en visuele communicatie.",
   "heroButtonLabel": "Plan een kennismaking",
   "heroImage": "/assets/designbysanne/diensten-hero.jpg",
   "heroImageAlt": "Sanne van Design by Sanne aan het werk",
@@ -16,7 +16,7 @@
     {
       "number": "01",
       "title": "Strategie & positionering",
-      "text": "We brengen helder in kaart waar je voor staat, wie je wilt bereiken en welke boodschap daarbij hoort.",
+      "text": "Ik breng helder in kaart waar je voor staat, wie je wilt bereiken en welke boodschap daarbij hoort.",
       "points": ["Richting en keuzes scherp krijgen", "Doelgroep en kernboodschap bepalen", "Communicatie-aanpak en prioriteiten"]
     },
     {
@@ -36,12 +36,6 @@
       "title": "Visuele communicatie & ontwerp",
       "text": "Communicatie wordt niet alleen duidelijk, maar ook visueel sterk en passend bij je merk.",
       "points": ["Grafisch ontwerp en drukwerk", "Social visuals en presentaties", "Praktische merkuitingen"]
-    },
-    {
-      "number": "05",
-      "title": "Website & online beheer",
-      "text": "Je website blijft actueel, duidelijk en ondersteunend aan je marketing en communicatie.",
-      "points": ["Pagina's en content bijwerken", "Websitecommunicatie verbeteren", "Eenvoudige technische updates"]
     }
   ],
   "processKicker": "Werkwijze",
@@ -50,12 +44,12 @@
     {
       "label": "Stap 1",
       "title": "Scherp krijgen",
-      "text": "We bepalen doelen, doelgroep, boodschap en de belangrijkste keuzes."
+      "text": "Ik bepaal samen met jou de doelen, doelgroep, boodschap en belangrijkste keuzes."
     },
     {
       "label": "Stap 2",
       "title": "Maken & uitvoeren",
-      "text": "Ik werk content, campagnes, visuals, nieuwsbrieven of website-aanpassingen uit."
+      "text": "Ik werk content, campagnes, visuals, nieuwsbrieven en andere communicatiemiddelen uit."
     },
     {
       "label": "Stap 3",

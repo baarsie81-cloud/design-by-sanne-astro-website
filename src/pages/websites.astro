@@ -1,0 +1,69 @@
+---
+import PropositionPage from "../components/PropositionPage.astro";
+
+const capabilities = [
+  {
+    number: "01",
+    title: "Richting & structuur",
+    text: "Eerst wordt helder voor wie de website is, wat bezoekers moeten begrijpen en welke route daarbij past.",
+    points: ["Doel en doelgroep", "Pagina- en navigatiestructuur", "Duidelijke prioriteiten"],
+  },
+  {
+    number: "02",
+    title: "Inhoud & vormgeving",
+    text: "Tekst en ontwerp versterken elkaar, zodat de website herkenbaar voelt en prettig leest.",
+    points: ["Webteksten en kernboodschap", "Visuele stijl en pagina-opbouw", "Geschikt voor mobiel gebruik"],
+  },
+  {
+    number: "03",
+    title: "Technische realisatie",
+    text: "De website wordt zorgvuldig gebouwd met aandacht voor snelheid, toegankelijkheid en eenvoudig beheer.",
+    points: ["Moderne, betrouwbare techniek", "Responsive uitwerking", "SEO-technische basis"],
+  },
+  {
+    number: "04",
+    title: "Livegang & doorontwikkeling",
+    text: "Ook na de bouw blijft duidelijk wat nodig is om de website actueel en bruikbaar te houden.",
+    points: ["Controle voor livegang", "Praktische overdracht", "Gerichte verbeteringen"],
+  },
+];
+
+const steps = [
+  { label: "Stap 1", title: "Scherp krijgen", text: "We bepalen het doel, de doelgroep, de inhoud en de belangrijkste gebruikersroute." },
+  { label: "Stap 2", title: "Ontwerpen & bouwen", text: "Ik werk structuur, tekst en uitstraling uit en zorg dat de website technisch wordt gerealiseerd." },
+  { label: "Stap 3", title: "Controleren & live", text: "We testen de website op inhoud, werking en mobiel gebruik voordat hij online gaat." },
+];
+---
+
+<PropositionPage
+  seoTitle="Websites laten maken | Design by Sanne"
+  seoDescription="Design by Sanne maakt complete websites waarin strategie, inhoud, vormgeving en techniek logisch samenkomen."
+  canonical="https://designbysanne.nl/websites/"
+  kicker="Websites"
+  heroTitle="Een website die laat zien wie je bent én doet wat nodig is."
+  heroIntro="Ik help je van eerste idee tot een complete, professionele website. Helder opgebouwd, passend bij je organisatie en prettig voor bezoekers om te gebruiken."
+  heroImage="/assets/designbysanne/project-visuals/life-line-trainingen-website.webp"
+  heroImageAlt="Homepage van de website van Life Line Trainingen"
+  projectCaption="Websiteproject · Life Line Trainingen"
+  heroButtonLabel="Bespreek je website"
+  statementText="Geen losse pagina’s of alleen een mooi ontwerp, maar één duidelijke website waarin verhaal, gebruiksgemak en techniek elkaar versterken."
+  introKicker="Van idee tot online"
+  introTitle="Alles wat nodig is om goed voor de dag te komen."
+  introText="Een goede website begint niet bij de techniek. Eerst moet duidelijk zijn wat je wilt vertellen, wie je wilt bereiken en wat een bezoeker moet kunnen doen. Vanuit die basis werk ik toe naar een website die professioneel voelt en praktisch werkt."
+  introPoints={["Een heldere structuur en gebruikersroute", "Inhoud en vormgeving in één herkenbare lijn", "Techniek die snel, veilig en mobielvriendelijk werkt", "Een praktische basis om later verder te groeien"]}
+  capabilityKicker="Complete websitebouw"
+  capabilityTitle="Van eerste keuzes tot een werkende website."
+  capabilityIntro="Ik begeleid het hele traject en bewaak dat inhoud, uitstraling en technische uitvoering bij elkaar blijven passen."
+  capabilities={capabilities}
+  visualKicker="Websiteproject"
+  visualTitle="Life Line Trainingen"
+  visualText="De projectvisual toont de homepage van Life Line Trainingen en laat zien hoe navigatie, inhoud en duidelijke acties in één website samenkomen."
+  processKicker="Werkwijze"
+  processTitle="Een overzichtelijk traject zonder onnodige techniek."
+  steps={steps}
+  trustKicker="Eén duidelijke lijn"
+  trustTitle="Persoonlijk begeleid, professioneel gerealiseerd."
+  trustText="Je houdt Sanne als vast aanspreekpunt. Ik zorg dat de inhoudelijke, visuele en technische onderdelen goed op elkaar aansluiten en leg keuzes in begrijpelijke taal uit."
+  ctaTitle="Toe aan een website die echt bij je organisatie past?"
+  ctaText="Vertel waar je nu staat en wat de website moet opleveren. Dan kijk ik graag welke aanpak logisch is."
+/>
