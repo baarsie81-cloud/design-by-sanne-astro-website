@@ -85,6 +85,53 @@ const { calendlyUrl } = siteSettings;
       </div>
     </section>
 
+    <section class="work-collage" aria-labelledby="work-collage-title">
+      <div class="work-collage-copy">
+        <p class="services-kicker">Werk in beeld</p>
+        <h2 id="work-collage-title">Een boodschap krijgt vorm in meer dan één middel.</h2>
+        <p>Van content en communicatiemiddelen tot een website of digitale toepassing: de vorm volgt het doel en de mensen die je wilt bereiken.</p>
+      </div>
+
+      <div class="work-collage-grid">
+        <figure class="work-collage-main">
+          <img
+            src="/assets/designbysanne/project-visuals/marketing-strategie-stock.webp"
+            alt="Overlegtafel met laptops, analyses en campagneplanning"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Marketing & strategie</span>
+            <strong>Van richting naar campagne</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="work-collage-secondary">
+          <img
+            src="/assets/designbysanne/project-visuals/life-line-trainingen-website.webp"
+            alt="Homepage van de website van Life Line Trainingen"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Websiteproject</span>
+            <strong>Life Line Trainingen</strong>
+          </figcaption>
+        </figure>
+
+        <figure class="work-collage-secondary">
+          <img
+            src="/assets/designbysanne/project-visuals/verlof-overuren-dashboard.webp"
+            alt="Dashboard voor verlof, ziekte, overuren en medewerkersbeheer"
+            loading="lazy"
+          />
+          <figcaption>
+            <span>Digitale oplossing</span>
+            <strong>Verlof- en overurendashboard</strong>
+          </figcaption>
+        </figure>
+      </div>
+
+    </section>
+
     <section class="proposition-links" aria-labelledby="proposition-links-title">
       <div class="section-heading">
         <p class="services-kicker">Ook voor digitale uitvoering</p>
@@ -305,9 +352,106 @@ const { calendlyUrl } = siteSettings;
     margin-top: 7px;
   }
 
-  .proposition-links {
+  .work-collage {
     padding: 94px 24px;
     background: #ffffff;
+  }
+
+  .work-collage-copy {
+    width: min(840px, 100%);
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+
+  .work-collage-copy h2 {
+    margin-bottom: 18px;
+    color: #1f2a2f;
+    font-size: 46px;
+    line-height: 1.08;
+    font-weight: 900;
+  }
+
+  .work-collage-copy p:not(.services-kicker) {
+    margin-bottom: 0;
+    color: #586167;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .work-collage-grid {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.28fr) minmax(280px, 0.72fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .work-collage-grid figure {
+    position: relative;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(32, 40, 47, 0.12);
+    border-radius: 8px;
+    background: #20282f;
+    box-shadow: 0 20px 50px rgba(32, 40, 47, 0.12);
+  }
+
+  .work-collage-main {
+    grid-row: 1 / -1;
+    aspect-ratio: 7 / 5;
+  }
+
+  .work-collage-secondary {
+    aspect-ratio: 16 / 10;
+  }
+
+  .work-collage-grid img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .work-collage-secondary img {
+    object-fit: contain;
+    background: #ffffff;
+  }
+
+  .work-collage-grid figcaption {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    padding: 14px 16px;
+    border-radius: 7px;
+    background: rgba(24, 32, 37, 0.9);
+    color: #ffffff;
+    backdrop-filter: blur(7px);
+  }
+
+  .work-collage-grid figcaption span,
+  .work-collage-grid figcaption strong {
+    display: block;
+  }
+
+  .work-collage-grid figcaption span {
+    margin-bottom: 5px;
+    color: #dca326;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .work-collage-grid figcaption strong {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .proposition-links {
+    padding: 94px 24px;
+    background: #f5f4ef;
   }
 
   .proposition-link-grid {
@@ -440,8 +584,22 @@ const { calendlyUrl } = siteSettings;
     }
 
     .section-heading h2,
+    .work-collage-copy h2,
     .services-cta h2 {
       font-size: 36px;
+    }
+
+    .work-collage-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+
+    .work-collage-main {
+      grid-row: auto;
+    }
+
+    .work-collage-secondary {
+      aspect-ratio: 2 / 1;
     }
 
     .services-grid,
@@ -481,12 +639,14 @@ const { calendlyUrl } = siteSettings;
     }
 
     .services-section,
+    .work-collage,
     .proposition-links,
     .process-section {
       padding: 68px 18px;
     }
 
     .section-heading h2,
+    .work-collage-copy h2,
     .services-cta h2 {
       font-size: 31px;
       line-height: 1.14;
@@ -497,6 +657,30 @@ const { calendlyUrl } = siteSettings;
     .process-grid article {
       min-height: 0;
       padding: 24px;
+    }
+
+    .work-collage-copy {
+      margin-bottom: 32px;
+    }
+
+    .work-collage-copy p:not(.services-kicker) {
+      font-size: 17px;
+    }
+
+    .work-collage-grid {
+      gap: 14px;
+    }
+
+    .work-collage-main,
+    .work-collage-secondary {
+      aspect-ratio: 4 / 3;
+    }
+
+    .work-collage-grid figcaption {
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 12px 14px;
     }
 
     .service-card span,
