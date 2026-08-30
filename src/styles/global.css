@@ -76,6 +76,21 @@ p {
   text-decoration: none;
 }
 
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a[aria-current="page"]::after {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #dca326;
+  content: "";
+}
+
 .header-cta {
   display: inline-flex;
   align-items: center;
@@ -151,9 +166,14 @@ p {
 }
 
 .mobile-menu-panel a:hover,
-.mobile-menu-panel a:focus-visible {
+.mobile-menu-panel a:focus-visible,
+.mobile-menu-panel a[aria-current="page"] {
   background: rgba(255, 255, 255, 0.1);
   outline: none;
+}
+
+.mobile-menu-panel a[aria-current="page"] {
+  box-shadow: inset 3px 0 0 #dca326;
 }
 
 .button {

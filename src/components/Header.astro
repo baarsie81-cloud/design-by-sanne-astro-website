@@ -2,6 +2,10 @@
 import siteSettings from "../data/siteSettings.json";
 
 const { calendlyUrl } = siteSettings;
+
+const normalizePath = (path: string) => path === "/" ? "/" : path.replace(/\/+$/, "");
+const currentPath = normalizePath(Astro.url.pathname);
+const isCurrent = (path: string) => normalizePath(path) === currentPath;
 ---
 
 <header class="site-header" aria-label="Hoofdnavigatie">
@@ -9,11 +13,11 @@ const { calendlyUrl } = siteSettings;
     <img src="/assets/designbysanne/logo-dbs-white.png" alt="Design by Sanne" />
   </a>
   <nav class="nav-links" aria-label="Hoofdmenu">
-    <a href="/diensten/">Diensten</a>
-    <a href="/websites/">Websites</a>
-    <a href="/digitale-oplossingen/">Digitale oplossingen</a>
-    <a href="/over-mij/">Over mij</a>
-    <a href="/contact/">Contact</a>
+    <a href="/diensten/" aria-current={isCurrent("/diensten/") ? "page" : undefined}>Marketing &amp; communicatie</a>
+    <a href="/websites/" aria-current={isCurrent("/websites/") ? "page" : undefined}>Websites</a>
+    <a href="/digitale-oplossingen/" aria-current={isCurrent("/digitale-oplossingen/") ? "page" : undefined}>Digitale oplossingen</a>
+    <a href="/over-mij/" aria-current={isCurrent("/over-mij/") ? "page" : undefined}>Over mij</a>
+    <a href="/contact/" aria-current={isCurrent("/contact/") ? "page" : undefined}>Contact</a>
   </nav>
   <a class="header-cta" href={calendlyUrl}>Kennismaken</a>
   <details class="mobile-menu">
@@ -26,12 +30,12 @@ const { calendlyUrl } = siteSettings;
       <span class="mobile-menu-label">Menu</span>
     </summary>
     <nav class="mobile-menu-panel" aria-label="Mobiel menu">
-      <a href="/">Home</a>
-      <a href="/diensten/">Diensten</a>
-      <a href="/websites/">Websites</a>
-      <a href="/digitale-oplossingen/">Digitale oplossingen</a>
-      <a href="/over-mij/">Over mij</a>
-      <a href="/contact/">Contact</a>
+      <a href="/" aria-current={isCurrent("/") ? "page" : undefined}>Home</a>
+      <a href="/diensten/" aria-current={isCurrent("/diensten/") ? "page" : undefined}>Marketing &amp; communicatie</a>
+      <a href="/websites/" aria-current={isCurrent("/websites/") ? "page" : undefined}>Websites</a>
+      <a href="/digitale-oplossingen/" aria-current={isCurrent("/digitale-oplossingen/") ? "page" : undefined}>Digitale oplossingen</a>
+      <a href="/over-mij/" aria-current={isCurrent("/over-mij/") ? "page" : undefined}>Over mij</a>
+      <a href="/contact/" aria-current={isCurrent("/contact/") ? "page" : undefined}>Contact</a>
       <a href={calendlyUrl}>Kennismaken</a>
     </nav>
   </details>
