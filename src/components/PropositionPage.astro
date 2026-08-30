@@ -15,11 +15,6 @@ interface Step {
   text: string;
 }
 
-interface VisualDetail {
-  label: string;
-  alt: string;
-}
-
 interface Props {
   seoTitle: string;
   seoDescription: string;
@@ -43,8 +38,6 @@ interface Props {
   visualKicker: string;
   visualTitle: string;
   visualText: string;
-  visualVariant: "website" | "dashboard";
-  visualDetails: VisualDetail[];
   processKicker: string;
   processTitle: string;
   steps: Step[];
@@ -78,8 +71,6 @@ const {
   visualKicker,
   visualTitle,
   visualText,
-  visualVariant,
-  visualDetails,
   processKicker,
   processTitle,
   steps,
@@ -154,7 +145,7 @@ const { calendlyUrl } = siteSettings;
       </div>
     </section>
 
-    <section class:list={["visual-proof", `visual-proof-${visualVariant}`]} aria-labelledby="visual-title">
+    <section class="visual-proof" aria-labelledby="visual-title">
       <figure class="visual-proof-primary">
         <img src={heroImage} alt={heroImageAlt} loading="lazy" />
         <figcaption>{projectCaption}</figcaption>
@@ -163,18 +154,6 @@ const { calendlyUrl } = siteSettings;
         <p class="proposition-kicker">{visualKicker}</p>
         <h2 id="visual-title">{visualTitle}</h2>
         <p>{visualText}</p>
-      </div>
-      <div class="visual-detail-grid" role="group" aria-label={`Details van ${visualTitle}`}>
-        {
-          visualDetails.map((detail) => (
-            <figure class="visual-detail-card">
-              <div>
-                <img src={heroImage} alt={detail.alt} loading="lazy" />
-              </div>
-              <figcaption>{detail.label}</figcaption>
-            </figure>
-          ))
-        }
       </div>
     </section>
 
@@ -431,7 +410,11 @@ const { calendlyUrl } = siteSettings;
   }
 
   .visual-proof {
-    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(330px, 0.8fr);
+  }
+
+  .visual-proof h2 {
+    font-size: 42px;
   }
 
   .visual-proof-primary {
@@ -452,70 +435,6 @@ const { calendlyUrl } = siteSettings;
     color: #70787c;
     font-size: 12px;
     line-height: 1.45;
-  }
-
-  .visual-detail-grid {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
-    gap: 18px;
-    margin-top: -18px;
-  }
-
-  .visual-detail-card {
-    margin: 0;
-    overflow: hidden;
-    border: 1px solid rgba(32, 40, 47, 0.12);
-    border-radius: 8px;
-    background: #ffffff;
-    box-shadow: 0 18px 44px rgba(32, 40, 47, 0.1);
-  }
-
-  .visual-detail-card > div {
-    aspect-ratio: 16 / 7;
-    overflow: hidden;
-    background: #ffffff;
-  }
-
-  .visual-detail-card img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .visual-detail-card figcaption {
-    padding: 13px 16px;
-    color: #586167;
-    font-size: 13px;
-    font-weight: 800;
-    line-height: 1.45;
-  }
-
-  .visual-proof-website .visual-detail-card:first-child img {
-    width: 154%;
-    max-width: none;
-    object-position: left center;
-  }
-
-  .visual-proof-website .visual-detail-card:last-child img {
-    width: 140%;
-    max-width: none;
-    margin-left: -40%;
-    object-position: right center;
-  }
-
-  .visual-proof-dashboard .visual-detail-card:first-child img {
-    width: 168%;
-    max-width: none;
-    object-position: left center;
-  }
-
-  .visual-proof-dashboard .visual-detail-card:last-child img {
-    width: 150%;
-    max-width: none;
-    margin-left: -50%;
-    object-position: right center;
   }
 
   .process-section {
@@ -593,10 +512,6 @@ const { calendlyUrl } = siteSettings;
       grid-template-columns: 1fr;
     }
 
-    .visual-detail-grid {
-      margin-top: 0;
-    }
-
     .proposition-hero-visual {
       max-width: 680px;
     }
@@ -651,15 +566,6 @@ const { calendlyUrl } = siteSettings;
     .visual-proof {
       padding: 68px 0;
       gap: 34px;
-    }
-
-    .visual-detail-grid {
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .visual-detail-card > div {
-      aspect-ratio: 16 / 8;
     }
 
     .capability-section,
