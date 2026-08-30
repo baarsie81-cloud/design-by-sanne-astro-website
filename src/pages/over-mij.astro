@@ -104,11 +104,14 @@ const { calendlyUrl } = siteSettings;
     </section>
 
     <section class="personal-section" aria-labelledby="personal-title">
-      <div>
-        <p class="about-kicker">{personalKicker}</p>
-        <h2 id="personal-title">{personalTitle}</h2>
+      <span class="personal-quote-mark" aria-hidden="true">“</span>
+      <div class="personal-inner">
+        <div>
+          <p class="about-kicker">{personalKicker}</p>
+          <h2 id="personal-title">{personalTitle}</h2>
+        </div>
+        <p>{personalText}</p>
       </div>
-      <p>{personalText}</p>
     </section>
 
     <section class="testimonial-section" aria-labelledby="testimonials-title">
@@ -122,7 +125,8 @@ const { calendlyUrl } = siteSettings;
         {
           testimonials.map((testimonial) => (
             <article class="testimonial-card">
-              <p>“{testimonial.quote}”</p>
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <blockquote>{testimonial.quote}</blockquote>
               <footer>
                 <strong>{testimonial.name}</strong>
                 <span>{testimonial.company}</span>
@@ -146,10 +150,10 @@ const { calendlyUrl } = siteSettings;
 
 <style>
   .about-hero {
-    min-height: 78vh;
+    min-height: 72vh;
     display: flex;
     align-items: center;
-    padding: 190px 24px 82px;
+    padding: 176px 24px 70px;
     background:
       linear-gradient(90deg, rgba(32, 40, 47, 0.96), rgba(32, 40, 47, 0.76)),
       radial-gradient(circle at 82% 24%, rgba(220, 163, 38, 0.3), transparent 34%),
@@ -161,8 +165,8 @@ const { calendlyUrl } = siteSettings;
     width: min(1120px, 100%);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 1.28fr) minmax(240px, 0.52fr);
-    gap: 48px;
+    grid-template-columns: minmax(0, 1.14fr) minmax(300px, 0.66fr);
+    gap: 44px;
     align-items: center;
   }
 
@@ -180,7 +184,7 @@ const { calendlyUrl } = siteSettings;
 
   .about-hero h1 {
     margin-bottom: 24px;
-    font-size: 58px;
+    font-size: 54px;
     line-height: 1;
     font-weight: 900;
     hyphens: none;
@@ -223,9 +227,7 @@ const { calendlyUrl } = siteSettings;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 22% 46%;
-    transform: scale(1.34);
-    transform-origin: 22% 46%;
+    object-position: center;
   }
 
   .about-statement {
@@ -236,8 +238,8 @@ const { calendlyUrl } = siteSettings;
   .about-statement p {
     width: min(1060px, calc(100% - 48px));
     margin: 0 auto;
-    padding: 34px 0;
-    font-size: 26px;
+    padding: 28px 0;
+    font-size: 24px;
     line-height: 1.42;
     font-weight: 800;
   }
@@ -245,10 +247,10 @@ const { calendlyUrl } = siteSettings;
   .about-story {
     width: min(1120px, calc(100% - 48px));
     margin: 0 auto;
-    padding: 94px 0;
+    padding: 76px 0;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
-    gap: 44px;
+    gap: 36px;
     align-items: center;
   }
 
@@ -284,8 +286,8 @@ const { calendlyUrl } = siteSettings;
   .about-proof div {
     display: grid;
     gap: 8px;
-    min-height: 126px;
-    padding: 24px;
+    min-height: 108px;
+    padding: 22px 24px;
     background: #ffffff;
   }
 
@@ -302,7 +304,7 @@ const { calendlyUrl } = siteSettings;
 
   .about-section,
   .testimonial-section {
-    padding: 94px 24px;
+    padding: 76px 24px;
     background: #f5f4ef;
   }
 
@@ -331,12 +333,12 @@ const { calendlyUrl } = siteSettings;
   }
 
   .strength-card {
-    min-height: 300px;
+    min-height: 260px;
   }
 
   .strength-card span {
     display: block;
-    margin-bottom: 54px;
+    margin-bottom: 36px;
     color: #9a4d42;
     font-size: 18px;
     font-weight: 900;
@@ -350,24 +352,40 @@ const { calendlyUrl } = siteSettings;
   }
 
   .strength-card p,
-  .testimonial-card p {
+  .testimonial-card blockquote {
     margin-bottom: 0;
     color: #586167;
     line-height: 1.62;
   }
 
   .personal-section {
-    padding: 86px 24px;
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
-    gap: 44px;
-    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 72px 24px;
     background: #20282f;
     color: #ffffff;
   }
 
-  .personal-section > * {
-    width: min(100%, 1120px);
+  .personal-quote-mark {
+    position: absolute;
+    right: max(24px, calc((100% - 1120px) / 2));
+    bottom: -82px;
+    color: rgba(220, 163, 38, 0.13);
+    font-family: Georgia, serif;
+    font-size: 280px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .personal-inner {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    gap: 44px;
+    align-items: center;
   }
 
   .personal-section h2,
@@ -375,17 +393,30 @@ const { calendlyUrl } = siteSettings;
     color: #ffffff;
   }
 
-  .personal-section p {
+  .personal-inner > p {
     margin-bottom: 0;
   }
 
   .testimonial-card {
+    position: relative;
     display: grid;
     align-content: space-between;
-    min-height: 274px;
+    min-height: 238px;
+    padding-top: 62px;
   }
 
-  .testimonial-card p {
+  .testimonial-quote-mark {
+    position: absolute;
+    top: 14px;
+    left: 26px;
+    color: #dca326;
+    font-family: Georgia, serif;
+    font-size: 58px;
+    line-height: 1;
+  }
+
+  .testimonial-card blockquote {
+    margin: 0;
     font-size: 18px;
   }
 
@@ -407,7 +438,7 @@ const { calendlyUrl } = siteSettings;
   .about-cta {
     width: min(1120px, calc(100% - 48px));
     margin: 0 auto;
-    padding: 86px 0;
+    padding: 72px 0;
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 36px;
@@ -424,7 +455,7 @@ const { calendlyUrl } = siteSettings;
     .about-story,
     .strength-grid,
     .testimonial-grid,
-    .personal-section,
+    .personal-inner,
     .about-cta {
       grid-template-columns: 1fr;
     }
@@ -489,13 +520,13 @@ const { calendlyUrl } = siteSettings;
 
     .about-section,
     .testimonial-section {
-      padding: 68px 18px;
+      padding: 60px 18px;
     }
 
     .about-story,
     .personal-section {
-      padding-top: 68px;
-      padding-bottom: 68px;
+      padding-top: 60px;
+      padding-bottom: 60px;
     }
 
     .about-story h2,
@@ -510,6 +541,10 @@ const { calendlyUrl } = siteSettings;
     .testimonial-card {
       min-height: 0;
       padding: 24px;
+    }
+
+    .testimonial-card {
+      padding-top: 64px;
     }
 
     .strength-card span {
