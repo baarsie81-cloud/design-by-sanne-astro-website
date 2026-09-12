@@ -38,6 +38,10 @@ interface Props {
   visualKicker: string;
   visualTitle: string;
   visualText: string;
+  visualImage?: string;
+  visualImageAlt?: string;
+  visualCaption?: string;
+  visualAspect?: "wide" | "standard";
   processKicker: string;
   processTitle: string;
   steps: Step[];
@@ -71,6 +75,10 @@ const {
   visualKicker,
   visualTitle,
   visualText,
+  visualImage = heroImage,
+  visualImageAlt = heroImageAlt,
+  visualCaption = projectCaption,
+  visualAspect = "wide",
   processKicker,
   processTitle,
   steps,
@@ -146,9 +154,9 @@ const { calendlyUrl } = siteSettings;
     </section>
 
     <section class="visual-proof" aria-labelledby="visual-title">
-      <figure class="visual-proof-primary">
-        <img src={heroImage} alt={heroImageAlt} loading="lazy" />
-        <figcaption>{projectCaption}</figcaption>
+      <figure class:list={["visual-proof-primary", { "visual-proof-primary-standard": visualAspect === "standard" }]}>
+        <img src={visualImage} alt={visualImageAlt} loading="lazy" />
+        <figcaption>{visualCaption}</figcaption>
       </figure>
       <div class="visual-proof-copy">
         <p class="proposition-kicker">{visualKicker}</p>
@@ -427,6 +435,10 @@ const { calendlyUrl } = siteSettings;
 
   .visual-proof-primary img {
     aspect-ratio: 2 / 1;
+  }
+
+  .visual-proof-primary-standard img {
+    aspect-ratio: 3 / 2;
   }
 
   .visual-proof-primary figcaption {
