@@ -111,8 +111,9 @@ const { calendlyUrl } = siteSettings;
           <h1 id="proposition-title">{heroTitle}</h1>
           <p>{heroIntro}</p>
           <a class="button button-primary" href={calendlyUrl}>{heroButtonLabel}</a>
+          {dashboardPortfolio && <a class="proposition-demo-link" href="#digital-dashboard-gallery">Bekijk de dashboarddemo’s <span aria-hidden="true">↓</span></a>}
         </div>
-        <figure class="proposition-hero-visual">
+        <figure class:list={["proposition-hero-visual", { "proposition-hero-visual-cover": dashboardPortfolio }]}>
           <img src={heroImage} alt={heroImageAlt} />
           <figcaption>{projectCaption}</figcaption>
         </figure>
@@ -290,6 +291,47 @@ const { calendlyUrl } = siteSettings;
     color: #ffffff;
     font-size: 12px;
     font-weight: 800;
+  }
+
+  .proposition-hero-visual-cover img {
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .proposition-demo-link {
+    display: block;
+    width: fit-content;
+    margin-top: 18px;
+    padding: 6px 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+    text-underline-offset: 5px;
+  }
+
+  .proposition-demo-link span {
+    margin-left: 6px;
+    color: #dca326;
+  }
+
+  .proposition-demo-link:hover {
+    color: #ffffff;
+    text-decoration-color: #dca326;
+  }
+
+  .proposition-demo-link:focus-visible {
+    outline: 2px solid #dca326;
+    outline-offset: 5px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(html:has(.proposition-demo-link)) {
+      scroll-behavior: auto;
+    }
   }
 
   .proposition-statement {
