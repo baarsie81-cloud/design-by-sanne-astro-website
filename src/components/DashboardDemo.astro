@@ -1,0 +1,63 @@
+---
+import DemoIcon from "./DemoIcon.astro";
+import { dashboardProjects, demoEmployees, demoRequests, demoCustomers, demoMortgages, portfolioAssets } from "../data/portfolio";
+interface Props { kind: string; }
+const { kind } = Astro.props;
+const project = dashboardProjects.find((item) => item.id === kind)!;
+const isLeave = kind === "leave";
+const isDbs = kind === "dbs";
+const metrics = isLeave
+  ? [["Medewerkers", "3", "users"], ["Open aanvragen", "2", "clock"], ["Ziek vandaag", "1", "heart"], ["Huidig jaar", "2026", "calendar"]]
+  : isDbs
+    ? [["Klanten", "4", "users"], ["Actieve projecten", "3", "folder"], ["Maandelijkse omzet", "€ 2.300", "euro"], ["Afgerond deze maand", "1", "check"]]
+    : [["Dossiers in behandeling", "3", "folder"], ["Lopende hoofdsom", "€ 1.020.000", "euro"], ["Afgehandeld", "2", "check"], ["Afgehandelde hoofdsom", "€ 640.000", "euro"]];
+---
+<div class:list={["demo-app", `demo-${kind}`]} data-demo-app data-screen="0" aria-hidden="true">
+  <aside class="demo-sidebar">
+    <div class="demo-brand">
+      {isDbs ? <><strong class="demo-dbs-mark">DBS</strong><small>DESIGN BY SANNE</small></> : <><DemoIcon name={isLeave ? "users" : "folder"} /><strong>{isLeave ? "Verlofbeheer" : "Hypotheken"}</strong></>}
+    </div>
+    <div class="demo-navigation">
+      {project.screens.slice(0, isLeave || isDbs ? 3 : 2).map((label, index) => <span class:list={["demo-nav-item", { "is-selected": index === 0 }]} data-demo-target={index} data-demo-nav={index}><DemoIcon name={["overview", "users", "folder"][index]} />{label}</span>)}
+      {isLeave && <><span class="demo-nav-muted"><DemoIcon name="calendar" />Agenda</span><span class="demo-nav-muted"><DemoIcon name="clock" />Registraties</span></>}
+      {kind === "mortgage" && <><span class="demo-nav-muted"><DemoIcon name="check" />Afgehandeld</span><span class="demo-nav-muted"><DemoIcon name="users" />Adviseurs</span><span class="demo-nav-muted"><DemoIcon name="folder" />Geldverstrekkers</span></>}
+    </div>
+    <span class="demo-sidebar-footer">{isDbs ? "Sanne" : "Demo-organisatie"}<small>Portfolio-demonstratie</small></span>
+  </aside>
+  <div class="demo-main">
+    <div class="demo-topbar"><span>{isDbs ? "Klanten, projecten en acties" : isLeave ? "Voorbeeldteam" : "Hypotheekdashboard"}</span><span class="demo-user">Demo <i>○</i></span></div>
+    <div class="demo-mobile-tabs">{project.screens.map((label, index) => <span class:list={{ "is-selected": index === 0 }} data-demo-mobile-nav={index} data-mobile-target={index}>{label}</span>)}</div>
+
+    <div class="demo-view" data-demo-view="0">
+      <header class="demo-page-header"><h3>{isDbs ? "Goedemorgen, Sanne" : isLeave ? "Dashboard" : "Overzicht"}</h3><p>{isDbs ? "Hier vind je een overzicht van je klanten, projecten en de laatste updates." : isLeave ? "Overzicht van je organisatie" : "Inzicht in hypotheekproductie en de voortgang van je dossiers."}</p></header>
+      <div class="demo-metrics">{metrics.map(([label, value, icon], index) => <div class="demo-metric"><span class:list={["demo-metric-icon", `demo-tone-${index}`]}><DemoIcon name={icon} /></span><span>{label}</span><strong>{value}</strong></div>)}</div>
+      <div class="demo-columns">
+        <section class="demo-panel">
+          <div class="demo-panel-heading"><h4>{isLeave ? "Open aanvragen" : isDbs ? "Recente klanten" : "Productie per adviseur"}</h4><span>Bekijk alles <DemoIcon name="arrow" /></span></div>
+          <div class="demo-table-wrap"><table><thead><tr><th>{isLeave ? "Medewerker" : isDbs ? "Klant" : "Adviseur"}</th><th>{isLeave ? "Type" : isDbs ? "Contactpersoon" : "In behandeling"}</th><th>{isLeave ? "Uren" : isDbs ? "Status" : "Hoofdsom"}</th></tr></thead><tbody>
+            {isLeave ? demoRequests.map((row) => <tr><td>{row.name}</td><td>{row.type}</td><td>{row.hours}</td></tr>) : isDbs ? demoCustomers.slice(0, 3).map((row) => <tr><td>{row.name}</td><td>{row.person}</td><td><span class="demo-status">{row.status}</span></td></tr>) : <><tr><td>Robin de Graaf</td><td>2</td><td>€ 610.000</td></tr><tr><td>Alex van Veen</td><td>1</td><td>€ 410.000</td></tr></>}
+          </tbody></table></div>
+        </section>
+        <section class:list={["demo-panel", { "demo-photo-panel": isDbs }]}>
+          {isDbs ? <><div class="demo-dbs-photo" style={`background-image:url('${portfolioAssets}/klant-projectdashboard.webp')`}></div><div class="demo-panel-heading"><h4>Aankomende acties</h4></div><div class="demo-list-line"><span class="demo-date">12<small>okt</small></span><p>Overleg Noordlicht Studio<small>10:00 – 11:00</small></p></div></> : <><div class="demo-panel-heading"><h4>{isLeave ? "Saldo per medewerker" : "Dossiers per fase"}</h4></div>{isLeave ? demoEmployees.slice(0, 2).map((row) => <div class="demo-balance"><strong>{row.name}</strong><span>Verlof <b>{row.leave}</b></span><span>Overuren <b>{row.overtime}</b></span></div>) : <div class="demo-phase-list">{["Documenten", "Offerte", "Beoordeling"].map((label, index) => <div><span>{label}</span><i style={`--bar:${[74, 52, 36][index]}%`}></i><b>1</b></div>)}</div>}</>}
+        </section>
+      </div>
+    </div>
+
+    <div class="demo-view" data-demo-view="1" hidden>
+      <header class="demo-page-header"><h3>{project.screens[1]}</h3><p>{isLeave ? "Alle verlof- en overurenaanvragen overzichtelijk bij elkaar." : isDbs ? "Je klanten en contactpersonen op één plek." : "De lopende dossiers en hun volgende stap."}</p></header>
+      <div class="demo-filterbar"><span class="demo-search">{isLeave ? "Zoek medewerker…" : isDbs ? "Zoek klant…" : "Zoek dossier…"}</span><span>{isLeave ? "Status: Open" : isDbs ? "Status: Alle klanten" : "Adviseur: Alle adviseurs"}<i>⌄</i></span></div>
+      <section class="demo-panel demo-full-table"><div class="demo-table-wrap"><table><thead><tr><th>{isLeave ? "Medewerker" : isDbs ? "Klant" : "Klant / dossier"}</th><th>{isLeave ? "Type / periode" : isDbs ? "Contactpersoon" : "Adviseur"}</th><th>{isLeave ? "Uren" : isDbs ? "Maandbedrag" : "Hoofdsom"}</th><th>Status</th></tr></thead><tbody>
+        {isLeave ? demoRequests.map((row) => <tr><td><strong>{row.name}</strong></td><td>{row.type}<small>{row.period}</small></td><td>{row.hours}</td><td><span class="demo-status demo-status-amber">{row.status}</span></td></tr>) : isDbs ? demoCustomers.map((row) => <tr><td><strong>{row.name}</strong></td><td>{row.person}<small>{row.email}</small></td><td>{row.fee}</td><td><span class="demo-status">{row.status}</span></td></tr>) : demoMortgages.map((row, index) => <tr class:list={{ "demo-selected-row": index === 0 }} data-demo-target={index === 0 ? "2" : undefined}><td><strong>{row.name}</strong><small>{row.id}</small></td><td>{row.advisor}</td><td>{row.amount}</td><td><span class="demo-status">{row.phase}</span></td></tr>)}
+      </tbody></table></div></section>
+      <p class="demo-result-count">{isLeave ? "2 open aanvragen" : isDbs ? "4 klanten" : "3 dossiers in behandeling"}</p>
+    </div>
+
+    <div class="demo-view" data-demo-view="2" hidden>
+      <header class="demo-page-header"><h3>{isLeave ? "Medewerkersoverzicht" : isDbs ? "Projecten" : "Dossier DEMO-001"}</h3><p>{isLeave ? "Actuele verlofsaldi, overuren en aanwezigheid." : isDbs ? "Volg de voortgang en zie wat aandacht nodig heeft." : "Elin van Dalen · In behandeling"}</p></header>
+      {isLeave ? <section class="demo-panel demo-full-table"><div class="demo-table-wrap"><table><thead><tr><th>Medewerker</th><th>Verlofsaldo</th><th>Overuren</th><th>Aanwezigheid</th></tr></thead><tbody>{demoEmployees.map((row) => <tr><td><strong>{row.name}</strong><small>{row.team}</small></td><td class="demo-saldo">{row.leave}</td><td>{row.overtime}</td><td><span class:list={["demo-status", { "demo-status-amber": row.status === "Ziek" }]}>{row.status}</span></td></tr>)}</tbody></table></div></section> : isDbs ? <section class="demo-panel demo-full-table"><div class="demo-table-wrap"><table><thead><tr><th>Project</th><th>Klant</th><th>Voortgang</th><th>Status</th></tr></thead><tbody>{demoCustomers.map((row, index) => <tr><td><strong>{row.project}</strong></td><td>{row.name}</td><td><span class="demo-project-progress" style={`--progress:${[68, 42, 18, 100][index]}%`}></span></td><td><span class="demo-status">{index === 3 ? "Afgerond" : index === 2 ? "Voorbereiding" : "In uitvoering"}</span></td></tr>)}</tbody></table></div></section> : <div class="demo-detail-grid"><section class="demo-panel"><div class="demo-panel-heading"><h4>Dossiergegevens</h4><span class="demo-status">In behandeling</span></div><dl><div><dt>Klant</dt><dd>Elin van Dalen</dd></div><div><dt>E-mail</dt><dd>elin@voorbeeld.example</dd></div><div><dt>Adviseur</dt><dd>Robin de Graaf</dd></div><div><dt>Geldverstrekker</dt><dd>DemoBank Noord</dd></div><div><dt>Hoofdsom</dt><dd>€ 325.000</dd></div><div><dt>Deadline</dt><dd>18 november 2026</dd></div></dl></section><section class="demo-panel"><div class="demo-panel-heading"><h4>Voortgang</h4></div><ol class="demo-checklist"><li class="is-done"><DemoIcon name="check" />Kennismaking</li><li class="is-done"><DemoIcon name="check" />Inventarisatie</li><li class="is-current"><DemoIcon name="folder" />Documenten verzamelen</li><li><DemoIcon name="clock" />Offerte aanvragen</li></ol></section></div>}
+    </div>
+  </div>
+  <svg class="demo-cursor" data-demo-cursor viewBox="0 0 24 28" aria-hidden="true"><path d="M2 2v22l6-6 4 8 4-2-4-8h9z" fill="white" stroke="#20282f" stroke-width="1.5" stroke-linejoin="round" /></svg>
+  <span class="demo-click-ring" data-demo-click-ring></span>
+</div>

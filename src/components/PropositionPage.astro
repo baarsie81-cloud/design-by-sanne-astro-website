@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import siteSettings from "../data/siteSettings.json";
+import PortfolioGallery from "./PortfolioGallery.astro";
 
 interface Capability {
   number: string;
@@ -42,6 +43,7 @@ interface Props {
   visualImageAlt?: string;
   visualCaption?: string;
   visualAspect?: "wide" | "standard";
+  dashboardPortfolio?: boolean;
   processKicker: string;
   processTitle: string;
   steps: Step[];
@@ -79,6 +81,7 @@ const {
   visualImageAlt = heroImageAlt,
   visualCaption = projectCaption,
   visualAspect = "wide",
+  dashboardPortfolio = false,
   processKicker,
   processTitle,
   steps,
@@ -153,7 +156,16 @@ const { calendlyUrl } = siteSettings;
       </div>
     </section>
 
-    <section class="visual-proof" aria-labelledby="visual-title">
+    {dashboardPortfolio ? (
+      <section class="dashboard-portfolio" aria-labelledby="dashboard-portfolio-title">
+        <div class="section-heading">
+          <p class="proposition-kicker">Digitale oplossingen in beeld</p>
+          <h2 id="dashboard-portfolio-title">Van overzicht naar de volgende stap.</h2>
+          <p>Drie korte demonstraties laten zien hoe informatie, acties en voortgang samenkomen. Alle getoonde gegevens zijn fictief.</p>
+        </div>
+        <PortfolioGallery id="digital-dashboard-gallery" />
+      </section>
+    ) : (<section class="visual-proof" aria-labelledby="visual-title">
       <figure class:list={["visual-proof-primary", { "visual-proof-primary-standard": visualAspect === "standard" }]}>
         <img src={visualImage} alt={visualImageAlt} loading="lazy" />
         <figcaption>{visualCaption}</figcaption>
@@ -163,7 +175,7 @@ const { calendlyUrl } = siteSettings;
         <h2 id="visual-title">{visualTitle}</h2>
         <p>{visualText}</p>
       </div>
-    </section>
+    </section>)}
 
     <section class="process-section" aria-labelledby="process-title">
       <div class="section-heading section-heading-dark">
@@ -201,6 +213,11 @@ const { calendlyUrl } = siteSettings;
 </BaseLayout>
 
 <style>
+  .dashboard-portfolio {
+    width: min(1168px, 100%);
+    margin: 0 auto;
+    padding: 72px 24px 94px;
+  }
   .proposition-hero {
     min-height: 78vh;
     display: flex;

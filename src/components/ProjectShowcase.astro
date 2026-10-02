@@ -1,4 +1,5 @@
 ---
+import PortfolioGallery from "./PortfolioGallery.astro";
 const projects = [
   {
     label: "Marketing & strategie",
@@ -37,8 +38,11 @@ const projects = [
   <div class="showcase-grid">
     {
       projects.map((project, index) => (
-        <article class:list={["showcase-card", `showcase-card-${project.layout}`]}>
-          <a href={project.href} aria-label={`Bekijk ${project.title}`}>
+        <article class:list={["showcase-card", `showcase-card-${project.layout}`, { "showcase-card-demo": index === 2 }]}>
+          {index === 2 ? (<>
+            <PortfolioGallery id="home-dashboard-gallery" compact />
+            <a class="showcase-demo-link" href={project.href}>Bekijk digitale oplossingen <span aria-hidden="true">→</span></a>
+          </>) : (<a href={project.href} aria-label={`Bekijk ${project.title}`}>
             <figure>
               <img src={project.image} alt={project.alt} loading={index === 0 ? "eager" : "lazy"} />
               <figcaption>
@@ -46,7 +50,7 @@ const projects = [
                 <strong>{project.title}</strong>
               </figcaption>
             </figure>
-          </a>
+          </a>)}
         </article>
       ))
     }
@@ -62,6 +66,20 @@ const projects = [
 </section>
 
 <style>
+  .showcase-card-demo { position: relative; }
+  .showcase-card .showcase-demo-link {
+    position: absolute;
+    inset: auto 0 0;
+    width: 100%;
+    height: 44px;
+    z-index: 4;
+    padding: 12px 18px;
+    background: #182025;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .showcase-demo-link span { float: right; color: #dca326; }
   .showcase {
     padding: 94px 24px;
     background: #ffffff;
