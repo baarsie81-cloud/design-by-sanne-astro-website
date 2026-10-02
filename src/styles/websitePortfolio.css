@@ -1,0 +1,34 @@
+.portfolio-websites .portfolio-stage { aspect-ratio: 2 / 1; background: #06152d; }
+.website-demo-app { --demo-accent: #dca326; position: relative; width: 100%; height: 100%; overflow: hidden; background: #06152d; }
+.website-shot { display: block; position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s; }
+.website-shot.is-current { opacity: 1; visibility: visible; z-index: 1; }
+.website-shot[hidden] { display: none; }
+.website-shot img, .website-mobile-menu img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.website-scroll-picture { display: block; width: 100%; transition: transform .95s cubic-bezier(.4,0,.2,1); }
+.website-scroll-picture img { display: block; width: 100%; height: auto; }
+.website-sticky-header { display: block; position: absolute; inset: 0 0 auto; z-index: 2; }
+.website-sticky-header img { display: block; width: 100%; height: auto; }
+.website-demo-app > span[data-demo-view] { display: none; }
+.website-target { position: absolute; width: 1px; height: 1px; pointer-events: none; }
+.website-mobile-menu { display: none; position: absolute; inset: 0; z-index: 3; }
+.portfolio-websites .portfolio-pause { top: auto; bottom: 12px; }
+.portfolio-websites .portfolio-compact-caption { bottom: 62px; }
+.portfolio-websites .portfolio-description > div { min-height: 180px; }
+.portfolio-websites .portfolio-demo-note [data-portfolio-note]::before { content: none; }
+.portfolio-compact .website-demo-app { width: 1120px; height: 560px; transform: scale(var(--demo-scale, .5)); transform-origin: top left; }
+.portfolio-websites.portfolio-compact .portfolio-stage { aspect-ratio: auto; }
+.portfolio-websites.portfolio-compact .portfolio-pause { top: 12px; bottom: auto; }
+.portfolio-websites.portfolio-compact .portfolio-description { display: none; }
+.portfolio-websites [data-website-mobile-src] { display: none; }
+@media (max-width: 980px) and (min-width: 621px) {
+  .portfolio-websites .portfolio-stage { aspect-ratio: 2 / 1; }
+}
+@media (max-width: 620px) {
+  .portfolio-websites:not(.portfolio-compact) .portfolio-stage { height: auto; aspect-ratio: 390 / 680; }
+  .portfolio-websites:not(.portfolio-compact) .website-demo-app[data-menu="true"] .website-mobile-menu { display: block; }
+  .portfolio-websites .portfolio-description > div { min-height: 210px; }
+}
+.portfolio-gallery[data-playing="false"] .website-scroll-picture { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .website-scroll-picture, .website-shot { transition: none; }
+}

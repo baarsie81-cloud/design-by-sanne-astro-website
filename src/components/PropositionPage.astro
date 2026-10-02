@@ -44,6 +44,7 @@ interface Props {
   visualCaption?: string;
   visualAspect?: "wide" | "standard";
   dashboardPortfolio?: boolean;
+  websitePortfolio?: boolean;
   processKicker: string;
   processTitle: string;
   steps: Step[];
@@ -82,6 +83,7 @@ const {
   visualCaption = projectCaption,
   visualAspect = "wide",
   dashboardPortfolio = false,
+  websitePortfolio = false,
   processKicker,
   processTitle,
   steps,
@@ -112,6 +114,7 @@ const { calendlyUrl } = siteSettings;
           <p>{heroIntro}</p>
           <a class="button button-primary" href={calendlyUrl}>{heroButtonLabel}</a>
           {dashboardPortfolio && <a class="proposition-demo-link" href="#digital-dashboard-gallery">Bekijk de dashboarddemo’s <span aria-hidden="true">↓</span></a>}
+          {websitePortfolio && <a class="proposition-demo-link" href="#website-project-gallery">Bekijk de website-demo’s <span aria-hidden="true">↓</span></a>}
         </div>
         <figure class:list={["proposition-hero-visual", { "proposition-hero-visual-cover": dashboardPortfolio }]}>
           <img src={heroImage} alt={heroImageAlt} />
@@ -165,6 +168,15 @@ const { calendlyUrl } = siteSettings;
           <p>Drie korte demonstraties laten zien hoe informatie, acties en voortgang samenkomen. Alle getoonde gegevens zijn fictief.</p>
         </div>
         <PortfolioGallery id="digital-dashboard-gallery" />
+      </section>
+    ) : websitePortfolio ? (
+      <section class="dashboard-portfolio" aria-labelledby="website-portfolio-title">
+        <div class="section-heading">
+          <p class="proposition-kicker">Websites in beeld</p>
+          <h2 id="website-portfolio-title">Nieuw gebouwd. Slim vernieuwd. Compact ontworpen.</h2>
+          <p>Bekijk een nieuwe website, een WordPress-upgrade en een landingpage-concept. Drie korte demonstraties, elk met een eigen uitstraling en gebruikersroute.</p>
+        </div>
+        <PortfolioGallery id="website-project-gallery" kind="websites" />
       </section>
     ) : (<section class="visual-proof" aria-labelledby="visual-title">
       <figure class:list={["visual-proof-primary", { "visual-proof-primary-standard": visualAspect === "standard" }]}>

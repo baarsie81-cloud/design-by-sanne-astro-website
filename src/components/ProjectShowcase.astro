@@ -38,8 +38,11 @@ const projects = [
   <div class="showcase-grid">
     {
       projects.map((project, index) => (
-        <article class:list={["showcase-card", `showcase-card-${project.layout}`, { "showcase-card-demo": index === 2 }]}>
-          {index === 2 ? (<>
+        <article class:list={["showcase-card", `showcase-card-${project.layout}`, { "showcase-card-demo": index > 0 }]}>
+          {index === 1 ? (<>
+            <PortfolioGallery id="home-website-gallery" kind="websites" compact />
+            <a class="showcase-demo-link" href={project.href}>Bekijk websites <span aria-hidden="true">→</span></a>
+          </>) : index === 2 ? (<>
             <PortfolioGallery id="home-dashboard-gallery" compact />
             <a class="showcase-demo-link" href={project.href}>Bekijk digitale oplossingen <span aria-hidden="true">→</span></a>
           </>) : (<a href={project.href} aria-label={`Bekijk ${project.title}`}>

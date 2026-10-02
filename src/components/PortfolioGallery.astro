@@ -1,26 +1,34 @@
 ---
 import DashboardDemo from "./DashboardDemo.astro";
+import WebsiteDemo from "./WebsiteDemo.astro";
 import DemoIcon from "./DemoIcon.astro";
 import { dashboardProjects } from "../data/portfolio";
+import { websiteProjects } from "../data/websitePortfolio";
 import "../styles/portfolio.css";
-interface Props { id: string; compact?: boolean; }
-const { id, compact = false } = Astro.props;
+import "../styles/websitePortfolio.css";
+interface Props { id: string; compact?: boolean; kind?: "dashboards" | "websites"; }
+const { id, compact = false, kind = "dashboards" } = Astro.props;
+const websites = kind === "websites";
+const projects = websites ? websiteProjects : dashboardProjects;
+const label = websites ? "Demonstraties van websites" : "Demonstraties van digitale oplossingen";
+const firstCategory = websites ? websiteProjects[0].category : "Digitale oplossing";
+const firstNote = websites ? websiteProjects[0].note : "Demonstratie met fictieve gegevens.";
 ---
-<div id={id} class:list={["portfolio-gallery", { "portfolio-compact": compact }]} data-portfolio-gallery data-compact={String(compact)} data-duration="7500" role="region" aria-label="Demonstraties van digitale oplossingen">
+<div id={id} class:list={["portfolio-gallery", { "portfolio-compact": compact, "portfolio-websites": websites }]} data-portfolio-gallery data-portfolio-kind={kind} data-compact={String(compact)} data-duration={websites ? "9000" : "7500"} role="region" aria-label={label}>
   <div class="portfolio-stage" data-portfolio-stage>
-    {dashboardProjects.map((project, index) => <div class:list={["portfolio-project", { "is-active": index === 0 }]} data-portfolio-project data-title={project.title} data-description={project.description} aria-hidden={index !== 0 ? "true" : "false"}>
-      <DashboardDemo kind={project.id} />
+    {projects.map((project, index) => <div class:list={["portfolio-project", { "is-active": index === 0 }]} data-portfolio-project data-title={project.title} data-description={project.description} data-category={websites ? websiteProjects[index].category : "Digitale oplossing"} data-note={websites ? websiteProjects[index].note : "Demonstratie met fictieve gegevens."} data-screens={JSON.stringify(project.screens)} aria-hidden={index !== 0 ? "true" : "false"}>
+      {websites ? <WebsiteDemo project={websiteProjects[index]} first={index === 0} compact={compact} /> : <DashboardDemo kind={dashboardProjects[index].id} />}
     </div>)}
     <button class="portfolio-pause" type="button" data-portfolio-toggle aria-label="Pauzeer de demonstratie" aria-pressed="false"><span data-pause-icon><DemoIcon name="pause" /></span><span data-play-icon hidden><DemoIcon name="play" /></span><span class="portfolio-sr-only" data-toggle-text>Pauzeren</span></button>
-    {compact && <div class="portfolio-compact-caption"><span>Digitale oplossing · fictieve gegevens</span><strong data-portfolio-title>{dashboardProjects[0].title}</strong></div>}
+    {compact && <div class="portfolio-compact-caption"><span data-portfolio-category>{websites ? firstCategory : "Digitale oplossing · fictieve gegevens"}</span><strong data-portfolio-title>{projects[0].title}</strong></div>}
   </div>
   <div class="portfolio-controls">
-    <div class="portfolio-project-buttons" role="group" aria-label="Kies een dashboard">
-      {dashboardProjects.map((project, index) => <button type="button" data-portfolio-select={index} aria-pressed={index === 0 ? "true" : "false"} aria-label={`Bekijk ${project.title}`}><span class="portfolio-project-number">0{index + 1}</span><span>{compact ? project.title : ["Verlof & overuren", "DBS-dashboard", "Hypotheken"][index]}</span><i aria-hidden="true"></i></button>)}
+    <div class="portfolio-project-buttons" role="group" aria-label={websites ? "Kies een websitevoorbeeld" : "Kies een dashboard"}>
+      {projects.map((project, index) => <button type="button" data-portfolio-select={index} aria-pressed={index === 0 ? "true" : "false"} aria-label={`Bekijk ${project.title}`}><span class="portfolio-project-number">0{index + 1}</span><span>{compact || websites ? project.title : ["Verlof & overuren", "DBS-dashboard", "Hypotheken"][index]}</span><i aria-hidden="true"></i></button>)}
     </div>
     {!compact && <span class="portfolio-motion-note" data-portfolio-status>Automatische demonstratie</span>}
   </div>
-  {!compact && <div class="portfolio-description"><div><p class="portfolio-eyebrow">Digitale oplossing</p><h3 data-portfolio-title>{dashboardProjects[0].title}</h3><p data-portfolio-description>{dashboardProjects[0].description}</p></div><p class="portfolio-demo-note">Demonstratie met fictieve gegevens.<br /><span class="portfolio-hover-hint">Houd je muis boven het beeld om rustig te kijken.</span><span class="portfolio-touch-hint">Tik op het beeld om te pauzeren.</span></p></div>}
+  {!compact && <div class="portfolio-description"><div><p class="portfolio-eyebrow" data-portfolio-category>{firstCategory}</p><h3 data-portfolio-title>{projects[0].title}</h3><p data-portfolio-description>{projects[0].description}</p></div><p class="portfolio-demo-note"><span data-portfolio-note>{firstNote}</span><br /><span class="portfolio-hover-hint">Houd je muis boven het beeld om rustig te kijken.</span><span class="portfolio-touch-hint">Tik op het beeld om te pauzeren.</span></p></div>}
   <span class="portfolio-sr-only" aria-live="polite" data-portfolio-announcement></span>
 </div>
 

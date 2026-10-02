@@ -1,0 +1,30 @@
+---
+import { websiteMotionAssets, movaScroll, type WebsiteProject } from "../data/websitePortfolio";
+interface Props { project: WebsiteProject; first?: boolean; compact?: boolean; }
+const { project, first = false, compact = false } = Astro.props;
+const asset = (suffix: string) => `${websiteMotionAssets}/${project.id}-${suffix}.webp`;
+const mobileMedia = compact ? "not all" : "(max-width: 620px)";
+---
+<div class="website-demo-app" data-demo-app data-website-demo data-mobile-contact-direct={project.id === "lifeline" ? "true" : undefined} data-screen="0" aria-hidden="true">
+  {project.scroll ? (<>
+    <picture class="website-scroll-picture" data-website-scroll>
+      <source media={mobileMedia} data-website-mobile-src={asset("mobile")} />
+      <img data-website-src={asset("desktop")} alt="" width="1780" height="2782" loading="lazy" decoding="async" />
+    </picture>
+    <picture class="website-sticky-header">
+      <source media={mobileMedia} data-website-mobile-src={asset("header-mobile")} />
+      <img data-website-src={asset("header-desktop")} alt="" width="1780" height="68" loading="lazy" decoding="async" />
+    </picture>
+    {project.screens.map((name, index) => <span data-demo-view data-desktop-offset={movaScroll.desktop[index]} data-mobile-offset={movaScroll.mobile[index]} hidden={index !== 0}>{name}</span>)}
+  </>) : project.screens.map((name, index) => <picture class:list={["website-shot", { "is-current": index === 0 }]} data-demo-view hidden={index !== 0}>
+    <source media={mobileMedia} srcset={first && index === 0 ? asset(`${index}-mobile`) : undefined} data-website-mobile-src={asset(`${index}-mobile`)} />
+    <img src={first && index === 0 ? asset(`${index}-desktop`) : undefined} data-website-src={asset(`${index}-desktop`)} alt="" width="1780" height="890" loading="lazy" decoding="async" />
+  </picture>)}
+  <picture class="website-mobile-menu">
+    <img data-website-menu-src={asset("menu-mobile")} alt="" width="390" height="680" loading="lazy" decoding="async" />
+  </picture>
+  {project.desktopTargets.map((target, index) => <span class="website-target" data-demo-target={index + 1} style={`left:${target.x}%;top:${target.y}%`}></span>)}
+  {project.mobileTargets.map((target, index) => <span class="website-target" data-mobile-target={index + 1} style={`left:${target.x}%;top:${target.y}%`}></span>)}
+  <span class="demo-click-ring" data-demo-click-ring></span>
+  <svg class="demo-cursor" data-demo-cursor viewBox="0 0 24 28"><path d="M3 2v20l5-5 4 9 4-2-4-8h8L3 2Z" fill="white" stroke="#182025" stroke-width="1.5" stroke-linejoin="round" /></svg>
+</div>
