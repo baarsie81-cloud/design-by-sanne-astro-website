@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/legal.css";
+
+const documents = [
+  {
+    title: "Algemene voorwaarden",
+    version: "16 oktober 2026",
+    date: "2026-10-16",
+    description: "Algemene voorwaarden voor de werkzaamheden van Design by Sanne.",
+    url: "/documenten/algemene-voorwaarden-2026-10-16.pdf",
+  },
+  {
+    title: "Overeenkomsten",
+    version: "17 oktober 2026, revisie 2",
+    date: "2026-10-17",
+    description: "Overeenkomsten voor zakelijke dienstverlening, te gebruiken samen met de offerte en algemene voorwaarden.",
+    url: "/documenten/overeenkomsten-2026-10-17-r2.pdf",
+  },
+  {
+    title: "Privacyverklaring",
+    version: "18 oktober 2026",
+    date: "2026-10-18",
+    description: "Informatie over de verwerking van persoonsgegevens door Design by Sanne.",
+    url: "/documenten/privacyverklaring-2026-10-18.pdf",
+  },
+];
+---
+
+<BaseLayout
+  title="Juridische documenten | Design by Sanne"
+  description="Bekijk en download de actuele algemene voorwaarden, overeenkomsten en privacyverklaring van Design by Sanne. Eerdere voorwaarden blijven raadpleegbaar."
+  canonical="https://designbysanne.nl/juridisch/"
+  ogImage="/assets/designbysanne/logo-dbs-blue.png"
+>
+  <main class="legal-page">
+    <header class="legal-heading">
+      <p class="legal-kicker">Design by Sanne</p>
+      <h1>Juridische documenten</h1>
+      <p>Hier vindt u de actuele documenten voor nieuwe opdrachten. U kunt de PDF-bestanden rechtstreeks bekijken of downloaden.</p>
+    </header>
+
+    <section aria-labelledby="current-documents">
+      <h2 id="current-documents">Actuele documenten</h2>
+      <div class="legal-documents">
+        {documents.map((document) => (
+          <article class="legal-document">
+            <h3>{document.title}</h3>
+            <p class="legal-version">Versie <time datetime={document.date}>{document.version}</time></p>
+            <p>{document.description}</p>
+            <div class="legal-actions">
+              <a href={document.url} aria-label={`Bekijk ${document.title.toLowerCase()} (PDF)`}>Bekijk PDF</a>
+              <a href={document.url} download aria-label={`Download ${document.title.toLowerCase()} (PDF)`}>Download PDF</a>
+            </div>
+            {document.title === "Privacyverklaring" && <p class="legal-web-link"><a href="/privacyverklaring/">Lees de privacyverklaring op deze website</a></p>}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="legal-archive" aria-labelledby="earlier-versions">
+      <h2 id="earlier-versions">Eerdere versies</h2>
+      <p>Deze eerdere versie blijft beschikbaar voor offertes en contracten die ernaar verwijzen. Voor nieuwe opdrachten vindt u hierboven de actuele documenten.</p>
+      <h3>Algemene voorwaarden</h3>
+      <p>Versie <time datetime="2026-06-01">1 juni 2026</time> · Eerdere versie</p>
+      <div class="legal-actions">
+        <a href="/documenten/algemene-voorwaarden-2026-06-01.pdf">Bekijk voorwaarden van 1 juni 2026 (PDF)</a>
+        <a href="/documenten/algemene-voorwaarden-2026-06-01.pdf" download>Download voorwaarden van 1 juni 2026 (PDF)</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -51,5 +51,18 @@ const { emailAddress, instagramUrl, linkedinUrl, termsUrl } = siteSettings;
     >
       Algemene voorwaarden
     </a>
+    <a href="/privacyverklaring/">Privacyverklaring</a>
+    <a href="/juridisch/">Juridische documenten</a>
   </div>
 </footer>
+
+<style>
+  .footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 24px;
+  }
+  .footer-legal a { padding: 8px 0; }
+  .footer-legal a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+</style>
