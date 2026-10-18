@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/documenten/overeenkomsten-2026-10-17-r2.pdf",
+      "destination": "/documenten/overeenkomsten-2026-10-17.pdf",
+      "permanent": true
+    }
+  ]
+}
